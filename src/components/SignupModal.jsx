@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 export default function SignupModal() {
@@ -21,9 +20,12 @@ export default function SignupModal() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-        <h2 className="text-xl font-bold mb-4">Get Early Access</h2>
+        <h2 className="text-xl font-bold mb-2">Get Early Access</h2>
+        <p className="text-gray-600 mb-4 text-sm">
+          Leave your email and we'll reach out once we extend the beta to more users.
+        </p>
         <form onSubmit={handleSubmit}>
           <label className="block mb-2">
             <span className="text-gray-700">Email</span>
