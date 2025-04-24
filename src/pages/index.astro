@@ -1,11 +1,15 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>TestLens - Tame your flaky tests</title>
@@ -13,7 +17,10 @@ import '../styles/global.css';
   <body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
     <header class="bg-white shadow">
       <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">TestLens</h1>
+        <div class="flex items-center space-x-3">
+          <Image src={logo} alt="TestLens logo" class="w-8 h-8 md:w-10 md:h-10" />
+          <h1 class="text-2xl font-bold">TestLens</h1>
+        </div>
         <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get Early Access</a>
       </div>
     </header>
