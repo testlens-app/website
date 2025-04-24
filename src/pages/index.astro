@@ -10,7 +10,7 @@ import '../styles/global.css';
     <meta name="generator" content={Astro.generator} />
     <title>TestLens - Tame your flaky tests</title>
   </head>
-  <body class="bg-gray-50 text-gray-900 font-sans">
+  <body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
     <header class="bg-white shadow">
       <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
         <h1 class="text-2xl font-bold">TestLens</h1>
@@ -18,7 +18,7 @@ import '../styles/global.css';
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-16">
+    <main class="max-w-4xl mx-auto px-4 py-16 flex-grow">
       <section class="text-center">
         <h2 class="text-4xl font-extrabold mb-4">Tame Your Flaky Tests</h2>
         <p class="text-lg text-gray-600 mb-6">
@@ -67,7 +67,7 @@ import '../styles/global.css';
       </section>
     </main>
 
-    <footer class="mt-32 bg-white border-t">
+    <footer class="bg-white border-t">
       <div class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
         &copy; 2025 TestLens. All rights reserved.
       </div>
