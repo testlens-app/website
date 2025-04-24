@@ -26,20 +26,27 @@ import SignupModal from '../components/SignupModal.jsx';
     </header>
 
     <main class="max-w-5xl mx-auto px-4 py-16 flex-grow">
-      <section class="text-center mb-24">
-        <h2 class="text-4xl font-extrabold mb-4 text-dark">Tame flaky tests before they disrupt your productivity</h2>
-        <p class="text-lg text-muted mb-6">
-          TestLens helps you keep your test suite reliable by automatically detecting and isolating flaky tests.
-        </p>
-        <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-          <img src="https://source.unsplash.com/random/1280x320/?code,review" alt="Hero graphic" class="w-full h-full object-cover rounded-lg" />
+      <section class="relative mb-24 bg-gradient-to-r from-violet-500 to-fuchsia-400 text-white rounded-xl overflow-hidden p-12">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-extrabold mb-4">Tame flaky tests before they disrupt your productivity</h2>
+            <p class="text-lg mb-6">
+              TestLens helps you keep your test suite reliable by automatically detecting and isolating flaky tests.
+            </p>
+            <button data-signup-trigger class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+              Get Early Access
+            </button>
+          </div>
+          <div class="flex justify-center">
+            <Image src={import('../assets/hero.png')} alt="Hero illustration showing PR UI" class="rounded-lg max-h-64 w-full object-contain" />
+          </div>
         </div>
       </section>
 
       <section class="space-y-20">
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="flex-1">
-            <h3 class="text-2xl font-semibold mb-3 text-dark">1. Developer opens a pull request</h3>
+            <h3 class="text-2xl font-semibold mb-3 text-dark">1. Open a pull request</h3>
             <p class="text-muted">TestLens starts monitoring your test runs as soon as you push a PR.</p>
           </div>
           <div class="flex-1 h-48 rounded-lg flex items-center justify-center">
@@ -59,8 +66,8 @@ import SignupModal from '../components/SignupModal.jsx';
 
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="flex-1">
-            <h3 class="text-2xl font-semibold mb-3 text-dark">3. Developer mutes flaky tests</h3>
-            <p class="text-muted">With a single click, the developer mutes flaky tests and TestLens reruns the pipeline — right from the PR comment.</p>
+            <h3 class="text-2xl font-semibold mb-3 text-dark">3. Mute flaky tests</h3>
+            <p class="text-muted">With a single click, you mute flaky tests and TestLens reruns the pipeline — right from the PR comment.</p>
           </div>
           <div class="flex-1 h-48 rounded-lg flex items-center justify-center">
             <Image src={import('../assets/process/03 - mute tests.png')} alt="Developer mutes tests" class="w-full max-h-48 object-contain rounded-lg" />
