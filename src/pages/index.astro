@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
+import SignupModal from '../components/SignupModal.jsx';
 ---
 
 <html lang="en">
@@ -21,7 +22,7 @@ import logo from '../assets/logo.png';
           <Image src={logo} alt="TestLens logo" class="w-8 h-8 md:w-10 md:h-10" />
           <h1 class="text-2xl font-bold">TestLens</h1>
         </div>
-        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get Early Access</a>
+        <button onclick="window.dispatchEvent(new CustomEvent('toggle-signup-modal'))" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get Early Access</button>
       </div>
     </header>
 
@@ -31,9 +32,6 @@ import logo from '../assets/logo.png';
         <p class="text-lg text-gray-600 mb-6">
           TestLens is your GitHub-native tool to detect, mute, and manage flaky tests — right in your PRs.
         </p>
-        <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
-          Try It Now
-        </a>
       </section>
 
       <section class="mt-24 grid md:grid-cols-2 gap-12">
@@ -68,9 +66,9 @@ import logo from '../assets/logo.png';
         <p class="text-gray-600 mb-6">
           Join the beta and be the first to streamline your test suite with TestLens.
         </p>
-        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
-          Sign Up Now
-        </a>
+        <button onclick="window.dispatchEvent(new CustomEvent('toggle-signup-modal'))" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+          Get Early Access
+        </button>
       </section>
     </main>
 
@@ -79,5 +77,7 @@ import logo from '../assets/logo.png';
         &copy; 2025 TestLens. All rights reserved.
       </div>
     </footer>
+
+    <SignupModal client:load />
   </body>
 </html>
