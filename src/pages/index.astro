@@ -3,14 +3,74 @@ import '../styles/global.css';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>TestLens - Tame your flaky tests</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">TestLens</h1>
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get Early Access</a>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-16">
+      <section class="text-center">
+        <h2 class="text-4xl font-extrabold mb-4">Tame Your Flaky Tests</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          TestLens is your GitHub-native tool to detect, mute, and manage flaky tests — right in your PRs.
+        </p>
+        <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+          Try It Now
+        </a>
+      </section>
+
+      <section class="mt-24 grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold mb-3">Instant Feedback in PRs</h3>
+          <p class="text-gray-700">
+            TestLens inspects failed tests and highlights which ones are flaky or failing on base branch. Mute them directly in the PR comment and rerun with a click.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold mb-3">Track & Manage Globally</h3>
+          <p class="text-gray-700">
+            A dashboard issue keeps tabs on all flaky tests across your project. Mute globally, track history, and collaborate.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold mb-3">Seamless GitHub Integration</h3>
+          <p class="text-gray-700">
+            Powered by a GitHub App and GitHub Actions. Set it up once and TestLens does the rest, automatically.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold mb-3">Developer Productivity First</h3>
+          <p class="text-gray-700">
+            Focus on coding, not test infra. TestLens filters out noisy tests and lets you skip known long runners.
+          </p>
+        </div>
+      </section>
+
+      <section class="mt-24 text-center">
+        <h3 class="text-3xl font-bold mb-4">Get Early Access</h3>
+        <p class="text-gray-600 mb-6">
+          Join the beta and be the first to streamline your test suite with TestLens.
+        </p>
+        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+          Sign Up Now
+        </a>
+      </section>
+    </main>
+
+    <footer class="mt-32 bg-white border-t">
+      <div class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
+        &copy; 2025 TestLens. All rights reserved.
+      </div>
+    </footer>
+  </body>
 </html>
