@@ -15,69 +15,105 @@ import SignupModal from '../components/SignupModal.jsx';
     <meta name="generator" content={Astro.generator} />
     <title>TestLens - Tame your flaky tests</title>
   </head>
-  <body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
+  <body class="bg-surface text-dark font-sans min-h-screen flex flex-col">
     <header class="bg-white shadow">
       <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
         <div class="flex items-center space-x-3">
           <Image src={logo} alt="TestLens logo" class="w-8 h-8 md:w-10 md:h-10" />
           <h1 class="text-2xl font-bold">TestLens</h1>
         </div>
-        <button onclick="window.dispatchEvent(new CustomEvent('toggle-signup-modal'))" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get Early Access</button>
+        <button data-signup-trigger class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get Early Access</button>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-16 flex-grow">
-      <section class="text-center">
-        <h2 class="text-4xl font-extrabold mb-4">Tame Your Flaky Tests</h2>
-        <p class="text-lg text-gray-600 mb-6">
+    <main class="max-w-5xl mx-auto px-4 py-16 flex-grow">
+      <section class="text-center mb-24">
+        <h2 class="text-4xl font-extrabold mb-4 text-dark">Tame Your Flaky Tests</h2>
+        <p class="text-lg text-muted mb-6">
           TestLens is your GitHub-native tool to detect, mute, and manage flaky tests — right in your PRs.
         </p>
+        <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
+          <img src="https://source.unsplash.com/random/1280x320/?technology,code" alt="Hero graphic" class="w-full h-full object-cover rounded-lg" />
+        </div>
       </section>
 
-      <section class="mt-24 grid md:grid-cols-2 gap-12">
-        <div>
-          <h3 class="text-2xl font-semibold mb-3">Instant Feedback in PRs</h3>
-          <p class="text-gray-700">
-            TestLens inspects failed tests and highlights which ones are flaky or failing on base branch. Mute them directly in the PR comment and rerun with a click.
-          </p>
+      <section class="space-y-20">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-3 text-dark">Instant Feedback in PRs</h3>
+            <p class="text-muted">
+              TestLens inspects failed tests and highlights which ones are flaky or failing on base branch. Mute them directly in the PR comment and rerun with a click.
+            </p>
+          </div>
+          <div class="flex-1 h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+            <img src="https://source.unsplash.com/random/640x360/?technology" alt="Feature image" class="w-full h-full object-cover rounded-lg" />
+          </div>
         </div>
-        <div>
-          <h3 class="text-2xl font-semibold mb-3">Track & Manage Globally</h3>
-          <p class="text-gray-700">
-            A dashboard issue keeps tabs on all flaky tests across your project. Mute globally, track history, and collaborate.
-          </p>
+
+        <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 fade-in">
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-3 text-dark">Track & Manage Globally</h3>
+            <p class="text-muted">
+              A dashboard issue keeps tabs on all flaky tests across your project. Mute globally, track history, and collaborate.
+            </p>
+          </div>
+          <div class="flex-1 h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+            <img src="https://source.unsplash.com/random/640x360/?software" alt="Feature image" class="w-full h-full object-cover rounded-lg" />
+          </div>
         </div>
-        <div>
-          <h3 class="text-2xl font-semibold mb-3">Seamless GitHub Integration</h3>
-          <p class="text-gray-700">
-            Powered by a GitHub App and GitHub Actions. Set it up once and TestLens does the rest, automatically.
-          </p>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 fade-in">
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-3 text-dark">Seamless GitHub Integration</h3>
+            <p class="text-muted">
+              Powered by a GitHub App and GitHub Actions. Set it up once and TestLens does the rest, automatically.
+            </p>
+          </div>
+          <div class="flex-1 h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+            <img src="https://source.unsplash.com/random/640x360/?automation" alt="Feature image" class="w-full h-full object-cover rounded-lg" />
+          </div>
         </div>
-        <div>
-          <h3 class="text-2xl font-semibold mb-3">Developer Productivity First</h3>
-          <p class="text-gray-700">
-            Focus on coding, not test infra. TestLens filters out noisy tests and lets you skip known long runners.
-          </p>
+
+        <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 fade-in">
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold mb-3 text-dark">Developer Productivity First</h3>
+            <p class="text-muted">
+              Focus on coding, not test infra. TestLens filters out noisy tests and lets you skip known long runners.
+            </p>
+          </div>
+          <div class="flex-1 h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+            <img src="https://loremflickr.com/640/360/technology" alt="Feature image" class="w-full h-full object-cover rounded-lg" />
+          </div>
         </div>
       </section>
 
       <section class="mt-24 text-center">
-        <h3 class="text-3xl font-bold mb-4">Get Early Access</h3>
-        <p class="text-gray-600 mb-6">
+        <h3 class="text-3xl font-bold mb-4 text-dark">Get Early Access</h3>
+        <p class="text-muted mb-6">
           Join the beta and be the first to streamline your test suite with TestLens.
         </p>
-        <button onclick="window.dispatchEvent(new CustomEvent('toggle-signup-modal'))" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+        <button data-signup-trigger class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
           Get Early Access
         </button>
       </section>
     </main>
 
     <footer class="bg-white border-t">
-      <div class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
+      <div class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-muted">
         &copy; 2025 TestLens. All rights reserved.
       </div>
     </footer>
 
     <SignupModal client:load />
+
+    <script>
+  document.querySelectorAll('[data-signup-trigger]').forEach(button => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('toggle-signup-modal'));
+    });
+  });
+</script>
+
+    
   </body>
 </html>
