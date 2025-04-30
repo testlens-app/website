@@ -102,14 +102,60 @@ import SignupModal from '../components/SignupModal.jsx';
       </div>
     </footer>
 
-    <SignupModal client:load />
+    <div id="sign-up-form" class="fixed inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-50 invisible">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+        <h2 class="text-xl font-bold mb-2">Get Early Access</h2>
+        <p class="text-gray-600 mb-4 text-sm">
+          Leave your email and we'll reach out once we extend the beta to more users.
+        </p>
+        <form
+          name="sign-up-form"
+          method="POST"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+        >
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+          <label class="block mb-2">
+            <span class="text-gray-700">Email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+              placeholder="you@example.com"
+            />
+          </label>
+          <div class="mt-4 flex justify-end gap-2">
+            <button
+              onclick="toggleSignupForm()"
+              type="button"
+              class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-    <script>
+    <script is:inline>
       document.querySelectorAll('[data-signup-trigger]').forEach(button => {
-        button.addEventListener('click', () => {
-          window.dispatchEvent(new CustomEvent('toggle-signup-modal'));
-        });
+        button.addEventListener('click', toggleSignupForm);
       });
+
+      function toggleSignupForm() {
+          document.getElementById('sign-up-form').classList.toggle("invisible");
+      }
     </script>
   </body>
 </html>
