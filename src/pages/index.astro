@@ -37,7 +37,7 @@ import logo from '../assets/logo.png';
             </button>
           </div>
           <div class="flex justify-center">
-            <Image src={import('../assets/hero.png')} alt="Hero illustration showing PR UI" class="rounded-lg max-h-64 w-full object-contain" />
+            <Image src={import('../assets/hero.png')} alt="Hero illustration showing PR UI" class="rounded-sm shadow-2xl" />
           </div>
         </div>
       </section>
@@ -48,8 +48,8 @@ import logo from '../assets/logo.png';
             <h3 class="text-2xl font-semibold mb-3 text-dark">1. Open a pull request</h3>
             <p class="text-muted">TestLens starts monitoring your test runs as soon as you push a PR.</p>
           </div>
-          <div class="flex-1 h-48 rounded-lg flex items-center justify-center">
-            <Image src={import('../assets/process/01 - open pr.png')} alt="Developer opens PR" class="w-full max-h-48 object-contain rounded-lg" />
+          <div class="flex-1">
+            <Image src={import('../assets/process/01_open_pr.png')} alt="Developer opens PR" class="rounded-sm shadow-2xl scale-75" />
           </div>
         </div>
 
@@ -58,8 +58,8 @@ import logo from '../assets/logo.png';
             <h3 class="text-2xl font-semibold mb-3 text-dark">2. TestLens analyzes and reports flaky tests</h3>
             <p class="text-muted">As tests run, TestLens flags flaky or failing tests directly in your PR as comments — including controls to mute them.</p>
           </div>
-          <div class="flex-1 h-48 rounded-lg flex items-center justify-center">
-            <Image src={import('../assets/process/02 - testlens report.png')} alt="TestLens analyzing" class="w-full max-h-48 object-contain rounded-lg" />
+          <div class="flex-1">
+            <Image src={import('../assets/process/02_testlens_report.png')} alt="TestLens analyzing" class="rounded-sm shadow-2xl scale-75" />
           </div>
         </div>
 
@@ -69,7 +69,7 @@ import logo from '../assets/logo.png';
             <p class="text-muted">With a single click, you mute flaky tests and TestLens reruns the pipeline — right from the PR comment.</p>
           </div>
           <div class="flex-1 h-48 rounded-lg flex items-center justify-center">
-            <Image src={import('../assets/process/03 - mute tests.png')} alt="Developer mutes tests" class="w-full max-h-48 object-contain rounded-lg" />
+            <Image src={import('../assets/process/03_mute.png')} alt="Developer mutes tests" class="rounded-sm shadow-2xl scale-75" />
           </div>
         </div>
 
@@ -79,7 +79,7 @@ import logo from '../assets/logo.png';
             <p class="text-muted">With all flaky tests muted and tests passing, the PR is ready to merge!</p>
           </div>
           <div class="flex-1 h-48 rounded-lg flex items-center justify-center">
-            <Image src={import('../assets/process/04 - pr merged.png')} alt="PR merged" class="w-full max-h-48 object-contain rounded-lg" />
+            <Image src={import('../assets/process/04_success.png')} alt="PR merged" class="rounded-sm shadow-2xl scale-75" />
           </div>
         </div>
       </section>
