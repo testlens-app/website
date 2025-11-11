@@ -1,15 +1,15 @@
 ---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import logo from '../assets/logo.png';
+import team from "../data/team.json";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" href="/favicon.png" sizes="any">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>TestLens - Tame your flaky tests</title>
@@ -21,13 +21,18 @@ import logo from '../assets/logo.png';
           <Image src={logo} alt="TestLens logo" class="w-8 h-8 md:w-10 md:h-10" />
           <h1 class="text-2xl font-bold">TestLens</h1>
         </div>
+        <div class="flex items-center space-x-3">
+          <a href="https://github.com/testlens-app" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <Icon name="github" class="w-6 h-6"/>
+          </a>
+        </div>
       </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-4 py-8">
       <section class="relative mb-24 bg-gradient-to-r from-blue-400 to-sky-200 text-white rounded-xl pt-8 pl-8 pr-4 pb-4">
         <div class="flex flex-col md:flex-row">
-          <div>
+          <div class="mb-6">
             <h2 class="text-4xl font-extrabold mb-12">Tame flaky tests before they disrupt your productivity</h2>
             <p class="text-xl mb-12">
               TestLens helps you keep your test suite reliable by automatically detecting and isolating flaky tests.
@@ -36,7 +41,7 @@ import logo from '../assets/logo.png';
               Get Early Access
             </button>
           </div>
-          <div>
+          <div class="flex">
             <Image src={import('../assets/hero.png')} alt="TestLens Bot in Action" />
           </div>
         </div>
@@ -84,18 +89,60 @@ import logo from '../assets/logo.png';
         </div>
       </section>
 
-      <section class="mt-24 text-center">
-        <h3 class="text-3xl font-bold mb-4 text-dark">Get Early Access</h3>
-        <p class="text-muted mb-6">
-          Join the beta and be the first to streamline your test suite with TestLens.
-        </p>
-        <button data-signup-trigger class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition cursor-pointer">
+      <section class="mt-10 text-center">
+        <button data-signup-trigger class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition cursor-pointer">
           Get Early Access
         </button>
+        <p class="text-muted mb-6 mt-4">
+          Join the beta and be the first to streamline your test suite with TestLens.
+        </p>
+      </section>
+
+      <section class="mt-10 text-center">
+        <h3 class="text-3xl font-bold mb-4 text-dark">Team</h3>
+        <p class="text-muted mb-6 mt-4">
+          Brought to you by leading developer productivity experts.
+        </p>
+        <div class="flex flex-col md:flex-row gap-8 align-top">
+          {team.map(member => (
+              <div class="bg-white shadow-md rounded-2xl p-4 flex-1 space-x-6 hover:shadow-lg">
+                <div class="flex space-x-4">
+                  <img class="w-14 h-14 rounded-full object-cover border-2 border-blue-600"
+                       src={member.picture} alt={`${member.name} Profile Picture`}/>
+                  <div>
+                    <h2 class="text-lg font-semibold text-gray-800">{member.name}</h2>
+                    <div class="flex space-x-4 mt-2">
+                      {member.socialLinks.github && (
+                          <a href={member.socialLinks.github} title="GitHub" target="_blank">
+                            <Icon name="github" class="w-6 h-6 text-gray-600 hover:text-gray-800"/>
+                          </a>
+                      )}
+                      {member.socialLinks.mastodon && (
+                          <a href={member.socialLinks.mastodon} title="Mastodon" target="_blank">
+                            <Icon name="mastodon" class="w-6 h-6 text-gray-600 hover:text-purple-800"/>
+                          </a>
+                      )}
+                      {member.socialLinks.linkedin && (
+                          <a href={member.socialLinks.linkedin} title="LinkedIn" target="_blank">
+                            <Icon name="linkedin" class="w-6 h-6 text-gray-600 hover:text-blue-800"/>
+                          </a>
+                      )}
+                      {member.socialLinks.youtube && (
+                          <a href={member.socialLinks.youtube} title=">ouTube" target="_blank">
+                            <Icon name="youtube" class="w-6 h-6 text-gray-600 hover:text-blue-800"/>
+                          </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <p class="flex-1 text-gray-600 mt-2 text-sm text-justify">{member.bio}</p>
+              </div>
+          ))}
+        </div>
       </section>
     </main>
 
-    <footer class="bg-white border-t">
+    <footer class="bg-white">
       <div class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-muted">
         &copy; 2025 TestLens. All rights reserved.
       </div>

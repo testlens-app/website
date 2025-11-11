@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Marc Philipp",
+    "bio": "Marc is the JUnit project lead, a Java Champion, and an independent development consultant specializing in JUnit and Gradle. He has extensive experience in developing business and consumer applications as a software engineer, as well as in training and coaching other developers.",
+    "picture": "https://avatars.githubusercontent.com/u/214207",
+    "socialLinks": {
+      "github": "https://github.com/marcphilipp",
+      "mastodon": "https://chaos.social/@marcphilipp",
+      "linkedin": "https://www.linkedin.com/in/marcphilipp"
+    }
+  },
+  {
+    "name": "Benedikt Ritter",
+    "bio": "Benedikt is a freelance consultant with deep expertise in Developer Productivity Engineering (DPE), Engineering Growth, Gradle Build Tool, and NixOS. With over five years of experience at Gradle, Inc., Benedikt helps teams optimize workflows, scale engineering efforts, and improve build systems.",
+    "picture": "https://avatars.githubusercontent.com/u/1327662",
+    "socialLinks": {
+      "github": "https://github.com/britter",
+      "mastodon": "https://chaos.social/@britter",
+      "linkedin": "https://www.linkedin.com/in/benedikt-ritter-83847b84/"
+    }
+  },
+  {
+    "name": "Jendrik Johannes",
+    "bio": "Jendrik is a passionate software developer with an interest in tooling that makes development more efficient and productive. For several years, he was part of the core development team of Gradle Build Tool. He supports teams to increase their productivity and improve the maintainability of their software products.",
+    "picture": "https://avatars.githubusercontent.com/u/1963746",
+    "socialLinks": {
+      "github": "https://github.com/jjohannes",
+      "mastodon": "https://mastodon.social/@jendrik",
+      "linkedin": "https://www.linkedin.com/in/jendrikjohannes",
+      "youtube": "https://youtube.com/@jjohannes"
+    }
+  }
+]
