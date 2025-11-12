@@ -1,0 +1,33 @@
+{
+  "title": "Test Lens - Tame flaky tests before they disrupt your productivity",
+  "hero": {
+    "title": "Tame flaky tests before they disrupt your productivity",
+    "description": "TestLens surfaces test failures from your CI pipeline directly in your pull request, allows you to mute unrelated failures, and trigger a rerun with a single click."
+  },
+  "steps": [
+    {
+      "title": "Open a pull request",
+      "description": "TestLens starts monitoring your test runs as soon as you open a pull request.",
+      "image": "01_open_pr.png",
+      "alt": "Developer opens pull request"
+    },
+    {
+      "title": "Inspect test failures",
+      "description": "As tests run, TestLens flags flaky and failing tests directly in your pull request comments.",
+      "image": "02_testlens_report.png",
+      "alt": "TestLens analyzing"
+    },
+    {
+      "title": "Decide how to proceed",
+      "description": "With a single click, you mute flaky tests and let TestLens rerun tests as needed.",
+      "image": "03_mute.png",
+      "alt": "Developer mutes tests"
+    },
+    {
+      "title": "Merge the pull request with confidence",
+      "description": "With flaky tests muted and tests passing, the pull request is ready to merge.",
+      "image": "04_success.png",
+      "alt": "Pull request merged"
+    }
+  ]
+}
