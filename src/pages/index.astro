@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import logo from '../assets/logo.png';
+import steps from "../data/process.json";
 import team from "../data/team.json";
 ---
 
@@ -48,46 +49,17 @@ import team from "../data/team.json";
       </section>
 
       <section class="space-y-10">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold mb-3 text-dark">1. Open a pull request</h3>
-            <p class="text-xl">TestLens starts monitoring your test runs as soon as you push a PR.</p>
+        {steps.map((step, index) => (
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1">
+              <h3 class="text-2xl font-semibold mb-3 text-dark">{index + 1}. {step.title}</h3>
+              <p class="text-xl">{step.description}</p>
+            </div>
+            <div class="flex-1">
+              <Image src={import('../assets/process/' + step.image)} alt={step.alt} />
+            </div>
           </div>
-          <div class="flex-1">
-            <Image src={import('../assets/process/01_open_pr.png')} alt="Developer opens PR" />
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold mb-3 text-dark">2. TestLens analyzes and reports flaky tests</h3>
-            <p class="text-lg">As tests run, TestLens flags flaky or failing tests directly in your PR as comments — including controls to mute them.</p>
-          </div>
-          <div class="flex-1">
-            <Image src={import('../assets/process/02_testlens_report.png')} alt="TestLens analyzing" />
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold mb-3 text-dark">3. Mute flaky tests</h3>
-            <p class="text-xl">With a single click, you mute flaky tests and TestLens reruns the pipeline — right from the PR comment.</p>
-          </div>
-          <div class="flex-1">
-            <Image src={import('../assets/process/03_mute.png')} alt="Developer mutes tests" />
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold mb-3 text-dark">4. PR is green and ready to merge</h3>
-            <p class="text-xl">With all flaky tests muted and tests passing, the PR is ready to merge!</p>
-          </div>
-          <div class="flex-1">
-            <Image src={import('../assets/process/04_success.png')} alt="PR merged" />
-          </div>
-        </div>
-      </section>
+        ))}
 
       <section class="mt-10 text-center">
         <button data-signup-trigger class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition cursor-pointer">
