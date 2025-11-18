@@ -33,7 +33,7 @@
           buildInputs =
             with pkgs;
             [
-              nodejs_22
+              nodejs_24
             ]
             ++ self.checks.${system}.pre-commit-check.enabledPackages;
         };
