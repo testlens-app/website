@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import type { Blog } from "../../types/Blog";
+import BlogList from "../../components/BlogList.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export async function getStaticPaths({ paginate }: any) {
+  const sourceBlogs = await getCollection("blog");
+
+  const byDate = (a: any, b: any) => {
+    const aDate = new Date((a as Blog).data.pubDate);
+    const bDate = new Date((b as Blog).data.pubDate);
+
+    return bDate.getTime() - aDate.getTime();
+  };
+
+  const blogs = sourceBlogs.sort(byDate);
+
+  return paginate(blogs, {
+    pageSize: 5,
+  });
+}
+
+export interface Props {
+  page: Page<CollectionEntry<"blog">>;
+}
+
+const { page } = Astro.props;
+---
+
+<Layout pagetitle="Blog">
+  <BlogList blogs={page?.data || []} />
+  <Pagination page={page} />
+</Layout>
