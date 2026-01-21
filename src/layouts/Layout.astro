@@ -1,0 +1,125 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import logo from "../assets/logo.png";
+import { actions } from "../data/homepage.json";
+
+interface Props {
+  pagetitle: string;
+}
+
+const { pagetitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pagetitle}</title>
+  </head>
+  <body
+    class="text-dark flex min-h-screen flex-col bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-sans"
+  >
+    <header class="bg-white shadow">
+      <div
+        class="mx-auto flex max-w-5xl items-center justify-between px-4 py-6"
+      >
+        <a href="/" title="TestLens" class="flex w-fit items-center space-x-3">
+          <Image
+            src={logo}
+            alt="TestLens logo"
+            class="h-8 w-8 md:h-10 md:w-10"
+          />
+          <h1 class="text-2xl font-bold">TestLens</h1>
+        </a>
+        <nav class="ml-20 flex-col items-center space-x-8">
+          <!-- <a href="/blog" title="Blog">Blog</a> -->
+          <a href="/contact" title="Contact">Contact</a>
+          <a href="/terms" title="Terms of Service">Terms</a>
+          <a href="/privacy" title="Privacy Policy">Privacy</a>
+          <a
+            class="mx-2"
+            href="https://github.com/testlens-app"
+            title="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="github" class="inline-flex h-6 w-6" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-8">
+      <slot />
+    </main>
+
+    <footer class="bg-white">
+      <div class="text-muted mx-auto max-w-7xl px-4 py-8 text-center text-sm">
+        &copy; 2025 TestLens. All rights reserved.
+      </div>
+    </footer>
+
+    <div
+      id="sign-up-form"
+      class="invisible fixed inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-sm"
+    >
+      <div class="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg">
+        <h2 class="mb-2 text-xl font-bold">Get Early Access</h2>
+        <p class="mb-4 text-sm text-gray-600">
+          {actions.contact}
+        </p>
+        <form
+          name="sign-up-form"
+          method="POST"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+        >
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+          <label class="mb-2 block">
+            <span class="text-gray-700">Email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
+              placeholder="you@example.com"
+            />
+          </label>
+          <div class="mt-4 flex justify-end gap-2">
+            <button
+              onclick="toggleSignupForm()"
+              type="button"
+              class="cursor-pointer rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="cursor-pointer rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script is:inline>
+    document.querySelectorAll("[data-signup-trigger]").forEach(button => {
+      button.addEventListener("click", toggleSignupForm);
+    });
+
+    function toggleSignupForm() {
+      document.getElementById("sign-up-form").classList.toggle("invisible");
+    }
+  </script>
+</html>
