@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { actions } from "../data/homepage.json";
+---
+
+<Layout pagetitle="Privacy Policy">
+  <section class="mb-14">
+    <div class="text-dark mb-3 text-xl font-semibold">
+      Johannes Philipp Ritter TestLens GbR
+    </div>
+    <div class="text-dark mb-3">
+      <a href="mailto:support@testlens.app">support@testlens.app</a>
+    </div>
+  </section>
+  <section class="mb-14 text-center">
+    <button
+      data-signup-trigger
+      class="cursor-pointer rounded-lg bg-blue-600 px-6 py-3 text-lg text-white transition hover:bg-blue-700"
+    >
+      Get Early Access
+    </button>
+    <p class="text-muted mt-4">
+      {actions.join}
+    </p>
+  </section>
+</Layout>
