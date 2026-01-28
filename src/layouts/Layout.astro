@@ -6,18 +6,31 @@ import { actions } from "../data/homepage.json";
 
 interface Props {
   pagetitle: string;
+  description?: string;
+  image?: string;
+  type?: string;
 }
 
-const { pagetitle } = Astro.props;
+const { pagetitle, description, image, type = "website" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="fediverse:creator" content="@testlens@mastodon.social">
+    <meta name="fediverse:creator" content="@testlens@mastodon.social" />
     <link rel="icon" href="/favicon.png" sizes="any" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:title" content={pagetitle} />
+    <meta
+      property="og:description"
+      content={description ? description : pagetitle}
+    />
+    {image && <meta property="og:image" content={image} />}
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content={type} />
+
     <title>{pagetitle}</title>
   </head>
   <body
@@ -60,23 +73,25 @@ const { pagetitle } = Astro.props;
             />
           </label>
           <label class="mb-2 block">
-            <span class="text-gray-700">GitHub handle (username/organization)</span>
+            <span class="text-gray-700"
+              >GitHub handle (username/organization)</span
+            >
             <input
-                type="text"
-                name="github"
-                required
-                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
-                placeholder="your-username/organization"
+              type="text"
+              name="github"
+              required
+              class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
+              placeholder="your-username/organization"
             />
           </label>
           <label class="mb-2 block">
             <span class="text-gray-700">Email</span>
             <input
-                type="email"
-                name="email"
-                required
-                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
-                placeholder="you@example.com"
+              type="email"
+              name="email"
+              required
+              class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
+              placeholder="you@example.com"
             />
           </label>
           <div class="mt-4 flex justify-end gap-2">
