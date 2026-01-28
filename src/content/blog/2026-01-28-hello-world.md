@@ -18,6 +18,6 @@ TestLens assists you in getting your pull requests merged faster. It posts an ea
 
 TestLens currently supports JVM (Java, Kotlin, etc.) projects with tests running on the JUnit Platform via Maven or Gradle and CI builds running on GitHub Actions.
 
-Prior to starting the private beta phase, we’ve already received onboarding requests from other open source projects which we’ll add in the coming weeks. If you’re interested in trying out TestLens as well, let us know.
+Prior to starting the private beta phase, we’ve already received onboarding requests from other open source projects which we’ll add in the coming weeks. If you’re interested in trying out TestLens as well, <a data-signup-trigger href="mailto:team@testlens.app">let us know</a>.
 
 The TestLens Team – Benedikt, Jendrik, and Marc

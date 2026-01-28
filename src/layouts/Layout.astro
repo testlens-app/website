@@ -83,8 +83,9 @@ const { pagetitle } = Astro.props;
       button.addEventListener("click", toggleSignupForm);
     });
 
-    function toggleSignupForm() {
+    function toggleSignupForm(event) {
       document.getElementById("sign-up-form").classList.toggle("invisible");
+      event.preventDefault();
     }
   </script>
 </html>
