@@ -1,0 +1,11 @@
+---
+import EarlyAccessButton from "./EarlyAccessButton.astro";
+const { text } = Astro.props;
+---
+
+<section class="mt-10 text-center">
+  <EarlyAccessButton />
+  <p class="text-muted mt-4 mb-6">
+    {text}
+  </p>
+</section>

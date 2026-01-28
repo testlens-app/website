@@ -4,8 +4,8 @@ import { getCollection } from "astro:content";
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import type { Blog } from "../../types/Blog";
-import BlogList from "../../components/BlogList.astro";
-import Pagination from "../../components/Pagination.astro";
+import BlogList from "../../components/blog/BlogList.astro";
+import Pagination from "../../components/blog/Pagination.astro";
 
 export async function getStaticPaths({ paginate }: any) {
   const sourceBlogs = await getCollection("blog");
