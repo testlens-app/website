@@ -17,7 +17,7 @@ const menuItems = [
       <Image src={logo} alt="TestLens logo" class="h-6 w-6 md:h-10 md:w-10" />
       <h1 class="text-2xl font-bold">TestLens</h1>
     </a>
-    <nav class="ml-20 hidden flex-col items-center space-x-8 sm:block">
+    <nav class="ml-20 hidden flex-col items-center space-x-8 md:block">
       {
         menuItems.map(item => (
           <a href={item.href} title={item.name}>
@@ -37,14 +37,14 @@ const menuItems = [
     </nav>
 
     <!-- Mobile Menu Button -->
-    <div class="flex-col sm:hidden">
+    <div class="flex-col md:hidden">
       <button id="menu-btn" class="focus:outline-none">
         <Icon name="menu" class="size-6" />
       </button>
     </div>
   </div>
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden sm:hidden">
+  <div id="mobile-menu" class="hidden md:hidden">
     {
       menuItems.map(item => (
         <a href={item.href} class="hover:bg-background-offset block px-4 py-2">
