@@ -1,0 +1,14 @@
+---
+import TeamMember from "./TeamMember.astro";
+const { members } = Astro.props;
+---
+
+<section class="mt-10 text-center">
+  <h3 class="text-dark mb-4 text-3xl font-bold">Team</h3>
+  <p class="text-muted mt-4 mb-6">
+    Brought to you by leading developer productivity experts.
+  </p>
+  <div class="flex flex-col gap-8 align-top md:flex-row">
+    {members.map(member => <TeamMember member={member} />)}
+  </div>
+</section>
