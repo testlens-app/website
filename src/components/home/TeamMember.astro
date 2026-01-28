@@ -1,0 +1,60 @@
+---
+import SocialMediaLink from "./SocialMediaLink.astro";
+const { member } = Astro.props;
+---
+
+<div
+  class="flex-1 space-x-6 rounded-2xl bg-white p-4 shadow-md hover:shadow-lg"
+>
+  <div class="flex space-x-4">
+    <img
+      class="h-14 w-14 rounded-full border-2 border-blue-600 object-cover"
+      src={member.picture}
+      alt={`${member.name} Profile Picture`}
+    />
+    <div>
+      <h2 class="text-lg font-semibold text-gray-800">{member.name}</h2>
+      <div class="mt-2 flex space-x-4">
+        {
+          member.socialLinks.github && (
+            <SocialMediaLink
+              href={member.socialLinks.github}
+              title="GitHub"
+              color="gray"
+            />
+          )
+        }
+        {
+          member.socialLinks.mastodon && (
+            <SocialMediaLink
+              href={member.socialLinks.mastodon}
+              title="Mastodon"
+              color="purple"
+            />
+          )
+        }
+        {
+          member.socialLinks.linkedin && (
+            <SocialMediaLink
+              href={member.socialLinks.linkedin}
+              title="LinkedIn"
+              color="blue"
+            />
+          )
+        }
+        {
+          member.socialLinks.youtube && (
+            <SocialMediaLink
+              href={member.socialLinks.youtube}
+              title="YouTube"
+              color="red"
+            />
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <p class="mt-2 flex-1 text-justify text-sm text-gray-600">
+    {member.bio}
+  </p>
+</div>
