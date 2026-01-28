@@ -3,7 +3,7 @@ title: "TestLens launches to accelerate Java and Kotlin pull request workflows"
 description: |
   Every software engineer knows the problem: you’re done with the implementation of a feature, you’ve opened a pull request (PR), and now the build is failing. More often than not, some tests have failed and you now need to figure out why. Was it your change? Did something in the environment change? Is the test flaky on the main branch as well?
 pubDate: "2026-01-28"
-image: "process/02_testlens_report.png"
+image: "blog/private-beta-announcement.png"
 ---
 
 Every software engineer knows the problem: you’re done with the implementation of a feature, you’ve opened a pull request (PR), and now the build is failing. More often than not, some tests have failed, and you now need to figure out why. Was it your change? Did something in the environment change? Is the test flaky on the main branch as well?
