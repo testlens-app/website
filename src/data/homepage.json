@@ -1,5 +1,5 @@
 {
-  "title": "Test Lens - Tame flaky tests before they disrupt your productivity",
+  "title": "TestLens - Tame flaky tests before they disrupt your productivity",
   "hero": {
     "title": "Tame flaky tests before they disrupt your productivity",
     "description": "TestLens surfaces test failures from your CI pipeline directly in your pull request, allows you to mute unrelated failures, and trigger a rerun with a single click."
