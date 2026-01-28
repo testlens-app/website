@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import logo from "../assets/logo.png";
+
+const menuItems = [
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+  { name: "Terms of Service", href: "/terms" },
+  { name: "Privacy Policy", href: "/privacy" },
+];
+---
+
+<header class="bg-white shadow">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-6">
+    <a href="/" title="TestLens" class="flex w-fit items-center space-x-3">
+      <Image src={logo} alt="TestLens logo" class="h-6 w-6 md:h-10 md:w-10" />
+      <h1 class="text-2xl font-bold">TestLens</h1>
+    </a>
+    <nav class="ml-20 hidden flex-col items-center space-x-8 sm:block">
+      {
+        menuItems.map(item => (
+          <a href={item.href} title={item.name}>
+            {item.name}
+          </a>
+        ))
+      }
+      <a
+        class="mx-2"
+        href="https://github.com/testlens-app"
+        title="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="github" class="inline-flex h-6 w-6" />
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex-col sm:hidden">
+      <button id="menu-btn" class="focus:outline-none">
+        <Icon name="menu" class="size-6" />
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden sm:hidden">
+    {
+      menuItems.map(item => (
+        <a href={item.href} class="hover:bg-background-offset block px-4 py-2">
+          {item.name}
+        </a>
+      ))
+    }
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+</script>

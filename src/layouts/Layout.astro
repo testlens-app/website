@@ -1,8 +1,7 @@
 ---
 import "../styles/global.css";
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import logo from "../assets/logo.png";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import { actions } from "../data/homepage.json";
 
 interface Props {
@@ -23,45 +22,11 @@ const { pagetitle } = Astro.props;
   <body
     class="text-dark flex min-h-screen flex-col bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-sans"
   >
-    <header class="bg-white shadow">
-      <div
-        class="mx-auto flex max-w-5xl items-center justify-between px-4 py-6"
-      >
-        <a href="/" title="TestLens" class="flex w-fit items-center space-x-3">
-          <Image
-            src={logo}
-            alt="TestLens logo"
-            class="h-8 w-8 md:h-10 md:w-10"
-          />
-          <h1 class="text-2xl font-bold">TestLens</h1>
-        </a>
-        <nav class="ml-20 flex-col items-center space-x-8">
-          <a href="/blog" title="Blog">Blog</a>
-          <a href="/contact" title="Contact">Contact</a>
-          <a href="/terms" title="Terms of Service">Terms</a>
-          <a href="/privacy" title="Privacy Policy">Privacy</a>
-          <a
-            class="mx-2"
-            href="https://github.com/testlens-app"
-            title="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon name="github" class="inline-flex h-6 w-6" />
-          </a>
-        </nav>
-      </div>
-    </header>
-
+    <Header />
     <main class="mx-auto max-w-5xl px-4 py-8">
       <slot />
     </main>
-
-    <footer class="bg-white">
-      <div class="text-muted mx-auto max-w-7xl px-4 py-8 text-center text-sm">
-        &copy; 2025 TestLens. All rights reserved.
-      </div>
-    </footer>
+    <Footer />
 
     <div
       id="sign-up-form"
