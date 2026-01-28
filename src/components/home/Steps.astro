@@ -1,0 +1,42 @@
+---
+import Step from "./Step.astro";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/process/*.png"
+);
+
+var index = 1;
+
+function getTitle(title: string) {
+  return `${index++}. ${title}`;
+}
+
+function getImage(image: string) {
+  return images["../../assets/process/" + image]();
+}
+
+interface Step {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<section class="space-y-10">
+  {
+    steps.map(step => (
+      <Step
+        title={getTitle(step.title)}
+        description={step.description}
+        image={getImage(step.image)}
+        alt={step.alt}
+      />
+    ))
+  }
+</section>
