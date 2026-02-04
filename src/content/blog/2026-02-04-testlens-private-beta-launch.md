@@ -1,7 +1,7 @@
 ---
 title: "TestLens launches to accelerate Java and Kotlin pull request workflows"
 description: |
-  Every software engineer knows the problem: you’re done with the implementation of a feature, you’ve opened a pull request (PR), and now the build is failing. More often than not, some tests have failed and you now need to figure out why. Was it your change? Did something in the environment change? Is the test flaky on the main branch as well?
+  Know this problem? You’re done with implementing a feature, but getting your PR through the CI pipeline is tedious. TestLens assists you to get your pull requests merged faster by posting an easy-to-read summary of failed tests and by rerunning failed tests only!
 pubDate: "2026-02-04"
 image: "blog/private-beta-announcement.png"
 ---
