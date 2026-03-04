@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { title } from "../data/homepage.json";
+---
+
+<Layout pagetitle={title}>
+  <div class="flex items-center justify-center">
+    <div class="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg">
+      <h2 class="mb-2 text-xl font-bold">Thank you for installing TestLens!</h2>
+      <p class="mb-4 text-sm text-gray-600">
+        As a next step, please add the
+        <a
+          class="text-blue-600 underline visited:text-purple-600 hover:text-blue-800"
+          href="https://github.com/testlens-app/setup-testlens"
+          target="_blank">setup-testlens</a
+        >
+        action to your GitHub Actions workflows.
+      </p>
+      <p class="mb-4 text-sm text-gray-600">
+        Since TestLens is in private beta, we need to get in touch with you to
+        complete the onboarding.
+      </p>
+      <form
+        name="post-install-form"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+      >
+        <input type="hidden" name="installation-id" />
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
+        <label class="mb-2 block">
+          <span class="text-gray-700">Name</span>
+          <input
+            type="text"
+            name="name"
+            required
+            class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
+            placeholder="Contact name"
+          />
+        </label>
+        <label class="mb-2 block">
+          <span class="text-gray-700">Email</span>
+          <input
+            type="email"
+            name="email"
+            required
+            class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-300 focus:ring focus:outline-none"
+            placeholder="name@example.com"
+          />
+        </label>
+        <div class="mt-4 flex justify-end gap-2">
+          <button
+            type="submit"
+            class="cursor-pointer rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    document.forms["post-install-form"].elements["installation-id"].value =
+      params["installation_id"];
+  </script>
+</Layout>
