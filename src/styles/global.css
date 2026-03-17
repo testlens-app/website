@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Google Sans Flex Variable", sans-serif;
+  --font-mono: "Google Sans Code Variable", sans-serif;
+}
