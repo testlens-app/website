@@ -29,4 +29,12 @@ test.describe("Visual Regression Tests", () => {
       mask: [page.locator(".footer-copyright")],
     });
   });
+
+  test("test failure details blog post", async ({ page }) => {
+    await page.goto("blog/2026/03/18/test-failure-details");
+    await expect(page).toHaveScreenshot("test-failure-details-blog-post.png", {
+      fullPage: true,
+      mask: [page.locator(".footer-copyright")],
+    });
+  });
 });
