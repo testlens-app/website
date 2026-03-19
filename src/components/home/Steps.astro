@@ -4,12 +4,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/process/*.png"
 );
 
-var index = 1;
-
-function getTitle(title: string) {
-  return `${index++}. ${title}`;
-}
-
 function getImage(image: string) {
   return images["../../assets/process/" + image]();
 }
@@ -30,9 +24,10 @@ const { steps } = Astro.props;
 
 <section class="space-y-10">
   {
-    steps.map(step => (
+    steps.map((step, index) => (
       <Step
-        title={getTitle(step.title)}
+        number={index + 1}
+        title={step.title}
         description={step.description}
         image={getImage(step.image)}
         alt={step.alt}

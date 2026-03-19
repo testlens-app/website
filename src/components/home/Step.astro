@@ -1,12 +1,19 @@
 ---
 import { Image } from "astro:assets";
-const { title, description, image, alt } = Astro.props;
+const { number, title, description, image, alt } = Astro.props;
 ---
 
 <div class="flex flex-col items-center gap-8 md:flex-row">
   <div class="flex-1">
-    <h3 class="text-dark mb-3 text-2xl font-semibold">
-      {title}
+    <h3 class="text-dark mb-3 text-2xl font-bold">
+      <div
+        class="mb-2 flex aspect-square h-15 rounded-full bg-green-600"
+        style="font-variation-settings: 'ROND' 50;"
+      >
+        <span class="m-auto font-mono text-4xl text-white">{number}</span>
+      </div>
+      <span style="font-variation-settings: 'slnt' -5, 'ROND' 50;">{title}</span
+      >
     </h3>
     <p class="text-xl">{description}</p>
   </div>
