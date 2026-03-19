@@ -35,7 +35,10 @@ const blogParams = getBlogParams(blog);
 >
   <section class="bg-background">
     <div class="container mx-auto justify-center px-6 py-8 lg:flex">
-      <div id="markdown" class="prose prose-lg relative mb-5 overflow-visible">
+      <div
+        id="markdown"
+        class="prose prose-slate sm:prose-lg relative mb-5 overflow-visible"
+      >
         <h1>{blog.data.title}</h1>
         <time
           datetime={new Date(blog.data.pubDate).toLocaleDateString()}
