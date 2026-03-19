@@ -5,15 +5,20 @@ const { title, description } = Astro.props;
 ---
 
 <section
-  class="relative mb-12 rounded-xl bg-gradient-to-r from-blue-400 to-sky-200 pt-8 pr-4 pb-4 pl-8 text-white sm:mb-24"
+  class="relative mb-12 rounded-xl bg-green-300 pt-6 pr-8 pb-4 pl-8 text-green-900 sm:mb-24 sm:pt-6 sm:pr-4"
 >
   <div class="flex flex-col md:flex-row">
-    <div class="mb-4 flex-2/5 sm:mb-8">
-      <h2 class="mb-8 text-2xl font-extrabold sm:mb-12 sm:text-4xl">{title}</h2>
-      <p class="mb-8 text-justify text-xl sm:mb-12">{description}</p>
+    <div class="mb-4 flex-7/12 sm:mt-6 sm:mb-6">
+      <h2
+        class="mb-4 text-2xl font-bold sm:mb-12 sm:text-4xl"
+        style="font-variation-settings: 'slnt' -5, 'ROND' 50;"
+      >
+        {title}
+      </h2>
+      <p class="mb-4 text-xl sm:mb-12">{description}</p>
       <EarlyAccessButton />
     </div>
-    <div class="hidden flex-3/5 sm:block">
+    <div class="hidden sm:block sm:flex-5/12">
       <Image
         src={import("../../assets/hero.png")}
         alt="TestLens Bot in Action"
