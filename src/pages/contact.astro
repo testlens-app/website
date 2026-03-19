@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { actions } from "../data/homepage.json";
+import EarlyAccessButton from "../components/home/EarlyAccessButton.astro";
 ---
 
 <Layout pagetitle="Contact">
@@ -13,12 +14,7 @@ import { actions } from "../data/homepage.json";
     </div>
   </section>
   <section class="mb-14 text-center">
-    <button
-      data-signup-trigger
-      class="cursor-pointer rounded-lg bg-blue-600 px-6 py-3 text-lg text-white transition hover:bg-blue-700"
-    >
-      Get Early Access
-    </button>
+    <EarlyAccessButton />
     <p class="text-muted mt-4">
       {actions.join}
     </p>
