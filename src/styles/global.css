@@ -6,7 +6,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 1 1000;
-  font-variation-settings: "ROND" 50;
   src: url(@fontsource-variable/google-sans-flex/files/google-sans-flex-latin-rond-normal.woff2)
     format("woff2-variations");
   unicode-range:

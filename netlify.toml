@@ -1,3 +1,9 @@
 [build.environment]
   NODE_VERSION = "24"
 
+[[headers]]
+  for = "/_astro/*.woff2"
+    [headers.values]
+    cache-control = '''
+    public,
+    max-age=604800'''

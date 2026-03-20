@@ -13,7 +13,10 @@ const { number, title, description, image, alt } = Astro.props;
           >{number}</span
         >
       </span>
-      <span class="font-[Google_Sans_Flex_Rond]">{title}</span>
+      <span
+        class="font-[Google_Sans_Flex_Rond]"
+        style="font-variation-settings: 'ROND' 50">{title}</span
+      >
     </h3>
     <p class="text-lg sm:text-xl">{description}</p>
   </div>
