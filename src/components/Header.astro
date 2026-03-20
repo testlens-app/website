@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 
 const menuItems = [
   { name: "Blog", href: "/blog" },
@@ -11,11 +11,12 @@ const menuItems = [
 ];
 ---
 
-<header class="bg-white shadow">
-  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-6">
+<header class="sticky top-0 bg-white shadow">
+  <div
+    class="mx-auto flex max-w-5xl items-center justify-between px-4 py-2 md:py-4"
+  >
     <a href="/" title="TestLens" class="flex w-fit items-center space-x-3">
-      <Image src={logo} alt="TestLens logo" class="h-6 w-6 md:h-10 md:w-10" />
-      <h1 class="text-2xl font-bold">TestLens</h1>
+      <h1><Image src={logo} alt="TestLens" class="w-40 md:w-60" /></h1>
     </a>
     <nav class="ml-20 hidden flex-col items-center space-x-8 md:block">
       {
