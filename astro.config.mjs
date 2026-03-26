@@ -14,6 +14,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
+  site: "https://testlens.app",
   integrations: [react(), icon(), mdx()],
 });
