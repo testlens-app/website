@@ -1,0 +1,45 @@
+---
+title: "TestLens Has a New Look"
+description: |
+  We've refreshed the TestLens visual identity with a new logo, colors, and fonts.
+  Here's the story behind the design.
+pubDate: "2026-03-26"
+image: "blog/new-logo-website-screenshot.png"
+---
+
+import { Image } from "astro:assets";
+import logo from "../../assets/blog/new-logo.svg";
+import screenshot from "../../assets/blog/new-logo-comment-screenshot.png";
+
+Every early-stage product has a logo that was never really designed — it just happened.
+Ours was no exception.
+We had something that worked, so we shipped it and moved on.
+
+Today we're rolling out a refreshed visual identity for TestLens: a new logo, updated colors, and new fonts.
+We're excited about it and wanted to share the thinking behind it.
+
+<Image
+  src={logo}
+  class="max-h-30"
+  alt="The TestLens logo: a circular icon that reminds of an eye with a gradient from green through yellow to red as its right half. The words TEST and LENS are shown to the left and right of the icon, respectively."
+/>
+
+The centerpiece of the new identity is the wordmark.
+It spells out **TEST LENS** with a stylized lens icon sitting right in the middle, where the two words meet.
+
+The gradient — running from red through yellow to green — represents the test states we work with every day: failing, flaky, and passing tests.
+In that continuum, the lens focuses light, cuts through noise, and lets you see clearly what you care about.
+That's what TestLens is trying to do for your pull request workflows and flaky tests.
+Not show you everything — show you what matters.
+
+One requirement we had: the icon needs to hold up small, as an avatar on GitHub.
+
+<Image
+  src={screenshot}
+  class="mx-auto max-h-80 w-auto"
+  alt="Screenshot of a GitHub pull request comment posted by the TestLens GitHub app"
+/>
+
+Beyond the logo, we've also updated the color palette and typography across the site, making it feel more polished and consistent.
+
+If you haven't tried TestLens yet and want to, <a data-signup-trigger href="mailto:team@testlens.app">let us know</a>.
