@@ -13,6 +13,9 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      tsconfigPaths: true,
+    },
   },
   site: "https://testlens.app",
   integrations: [react(), icon(), mdx()],
