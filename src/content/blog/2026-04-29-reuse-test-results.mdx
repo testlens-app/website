@@ -1,0 +1,41 @@
+---
+title: "Rerun Pull Request Builds Faster by Reusing Successful Test Results"
+description: |
+  Flaky GitHub Pull Request (PR) builds are an annoying reality in many projects and rerunning workflows manually is
+  a reocurring task. TestLens makes this less painful by offering convenient and quick rerun options.
+pubDate: "2026-04-29"
+image: "blog/test-reuse-feature.png"
+---
+
+Flaky GitHub Pull Request (PR) builds are an annoying reality in many projects.
+Just when you thought a change is complete and good to merge, an ❌ greets you.
+TestLens' [Test Failure Details View](https://testlens.app/blog/2026/03/18/test-failure-details/) helps you to swiftly
+assess if a failure hints at a real issue in your changes or if it is "just" flakiness.
+But also in the latter case, you need to act before you can merge.
+
+To unblock your PR, your need to rerun failed checks.
+For this, TestLens offers a convenient `☑️ Rerun jobs` button below the _Test Failure Details View_ so that you can
+trigger the necessary rerun without navigating through multiple pages of GitHub UI.
+
+But that's not all: TestLens also makes reruns (much) faster!
+Let's assume you have a check where 799 tests succeeded and only 1 failed due to flakiness.
+Normally, a rerun would execute all 800 test, including the 799 that already finished successfully, for the exact same
+changes. It would save a lot of time and resources, if we would reuse the previous results.
+
+import { Image } from "astro:assets";
+import screenshot from "../../assets/blog/test-reuse-feature.png";
+
+<Image
+  src={screenshot}
+  alt="Screenshot of the test result reuse feature that reuses successful results in a rerun."
+/>
+
+By checking the `☑️ ♻️ Only rerun the tests that failed or were muted before` box, TestLens does this for you.
+As TestLens recorded the results of the previous test runs, it instructs JUnit to skip the tests which are already
+know to be successful. Now, instead of unnecessarily running 799 tests, which were already successful
+only the 1 flaky test is reexecuted.
+
+_You may think: "This sounds very helpful, but just rerunning (even if it's fast) cannot be the solution to flakiness
+management, right?". We absolutely agree and that is why this is only one of the features TestLens offers you
+in its toolbox for dealing with flaky tests. Tracking flakiness across builds and helping you identifiying and fixing
+it is what we are working on right now – more about that in one of the upcoming posts._
