@@ -13,7 +13,7 @@
     "prettier": "prettier . --write"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/mdx": "^6.0.0",
     "@astrojs/react": "^5.0.0",
     "@fontsource-variable/google-sans-code": "^5.2.3",
     "@fontsource-variable/google-sans-flex": "^5.2.1",
