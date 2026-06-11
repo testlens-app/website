@@ -1,21 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { actions } from "../data/homepage.json";
-import EarlyAccessButton from "../components/home/EarlyAccessButton.astro";
 ---
 
 <Layout pagetitle="Contact">
-  <section class="prose prose-slate mb-14">
-    <h1>Contact</h1>
-    <p>Johannes Philipp Ritter TestLens GbR</p>
+  <section class="prose prose-slate max-w-none">
+    <h1>Contact and Support</h1>
+    <p>
+      Please get in touch via email to receive support, in particular for
+      questions about installation, onboarding, and subscription plans.
+    </p>
     <p>
       <a href="mailto:support@testlens.app">support@testlens.app</a>
-    </p>
-  </section>
-  <section class="mb-14 text-center">
-    <EarlyAccessButton />
-    <p class="text-muted mt-4">
-      {actions.join}
     </p>
   </section>
 </Layout>

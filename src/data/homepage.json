@@ -31,7 +31,6 @@
     }
   ],
   "actions": {
-    "join": "Join the beta and be the first to streamline your test suite with TestLens.",
-    "contact": "Leave your email and we'll reach out once we extend the beta to more users."
+    "join": "Install the GitHub app to streamline your test suite with TestLens."
   }
 }
