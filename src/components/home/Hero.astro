@@ -1,5 +1,5 @@
 ---
-import EarlyAccessButton from "./EarlyAccessButton.astro";
+import InstallButton from "./InstallButton.astro";
 import { Image } from "astro:assets";
 const { title, description } = Astro.props;
 ---
@@ -16,7 +16,7 @@ const { title, description } = Astro.props;
         {title}
       </h2>
       <p class="mb-4 text-lg sm:mb-8 sm:text-xl">{description}</p>
-      <EarlyAccessButton />
+      <InstallButton />
     </div>
     <div class="hidden sm:block sm:flex-5/12">
       <Image

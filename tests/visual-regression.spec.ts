@@ -8,7 +8,7 @@ test.describe("Visual Regression Tests", () => {
     await expect(page).toHaveScreenshot("homepage.png", {
       fullPage: true,
       // Small tolerance for font rendering/subpixel variations between runs
-      maxDiffPixelRatio: 0.02,
+      maxDiffPixelRatio: 0.01,
       // Mask the copyright year in footer
       mask: [page.locator(".footer-copyright")],
     });

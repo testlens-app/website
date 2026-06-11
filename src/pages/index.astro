@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import EarlyAccess from "../components/home/EarlyAccess.astro";
+import InstallSection from "../components/home/InstallSection.astro";
 import Hero from "../components/home/Hero.astro";
 import Steps from "../components/home/Steps.astro";
 import Team from "../components/home/Team.astro";
@@ -11,6 +11,6 @@ import team from "../data/team.json";
 <Layout pagetitle={title}>
   <Hero title={hero.title} description={hero.description} />
   <Steps steps={steps} />
-  <EarlyAccess text={actions.join} />
+  <InstallSection text={actions.join} />
   <Team members={team} />
 </Layout>
