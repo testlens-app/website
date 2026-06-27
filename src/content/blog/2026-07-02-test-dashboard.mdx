@@ -1,0 +1,35 @@
+---
+title: "Meet the Test Dashboard"
+description: |
+  If a test fails, TestLens now gives you the data you need to determine if flakiness is involved.
+pubDate: "2026-07-02"
+image: "blog/test-dashboard.png"
+---
+
+At TestLens, our goal is to:
+
+1. give you insights into the test flakiness situation of your products
+2. give you the automation and tools to ease constant pain caused by existing flakiness
+3. give you the tools and processes to reduce flakiness on the long run
+
+We do this by fokusing on Java/Kotlin projects on GitHub to give you tooling that integrates right into the toolchains
+and UIs you are already using.
+
+Today, we activated our new central feature for all our users: The **Test Dashboard**
+
+import { Image } from "astro:assets";
+import screenshot from "../../assets/blog/test-dashboard.png";
+
+<Image src={screenshot} alt="Screenshot of the Test Dashboard issue." />
+
+The Test Dashboard shows which tests have been flaky on your `main` branch and your Pull Requests in the past 30 days.
+You can access it as an _issue_ in each GitHub repository [TestLens is activated on](https://github.com/apps/testlens-app).
+
+The numbers from the dashboard also show up for failing tests in Pull Request comments.
+This, in addition to the [Test Failure Details](https://testlens.app/blog/2026/03/18/test-failure-details), allows you
+to quickly assess if you need to further investigate a problem or if a
+[Fast Rerun](https://testlens.app/blog/2026/05/07/reuse-test-results) of your Pull Request build is a good next action.
+
+The _Test Dashboard_ will act as the hub for flakiness investigation in your repository in the future.
+We are already working on additional tools to track and investigate flaky tests that show up in the Dashboard to fix
+them efficient in a process supported by TestLens.
