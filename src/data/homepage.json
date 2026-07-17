@@ -18,15 +18,21 @@
       "alt": "TestLens analyzing"
     },
     {
+      "title": "Get an overview over flaky tests",
+      "description": "TestLens creates a Test Dashboard issue in your repository that provides an overview over flaky tests across branches.",
+      "image": "03_test_dashboard.png",
+      "alt": "Test Dashboard"
+    },
+    {
       "title": "Decide how to proceed",
       "description": "With a single click, you mute flaky tests and let TestLens rerun tests as needed.",
-      "image": "03_mute.png",
+      "image": "04_mute.png",
       "alt": "Developer mutes tests"
     },
     {
       "title": "Merge the pull request with confidence",
       "description": "With flaky tests muted and tests passing, the pull request is ready to merge.",
-      "image": "04_success.png",
+      "image": "05_success.png",
       "alt": "Pull request merged"
     }
   ],
