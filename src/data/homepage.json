@@ -18,8 +18,8 @@
       "alt": "TestLens analyzing"
     },
     {
-      "title": "Get an overview over flaky tests",
-      "description": "TestLens creates a Test Dashboard issue in your repository that provides an overview over flaky tests across branches.",
+      "title": "Get an overview of flaky tests",
+      "description": "TestLens creates a Test Dashboard issue in your repository that provides an overview of flaky tests across branches.",
       "image": "03_test_dashboard.png",
       "alt": "Test Dashboard"
     },
