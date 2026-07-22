@@ -1,0 +1,37 @@
+---
+title: "TestLens now Generally Available!"
+description: |
+  Get it now: free for personal accounts and open-source projects; free trials for everyone!
+pubDate: "2026-07-22"
+image: "blog/marketplace-listing.png"
+---
+
+import { Image } from "astro:assets";
+import dashboard from "../../assets/blog/test-dashboard.png";
+import comment from "../../assets/blog/test-reuse-feature.png";
+
+We are proud to announce that TestLens is now available for all GitHub users!
+If you develop with Java or Kotlin on GitHub and use the JUnit Platform to run your tests, TestLens is here to ease your pain with
+flakiness in your test pipelines.
+
+TestLens will:
+
+1. give you insights into the test flakiness situation of your products through the [Test Dashboard](https://testlens.app/blog/2026/07/02/test-dashboard)
+2. give you the automation and tools to ease constant pain caused by existing flakiness in [Pull Request Comments](https://testlens.app/blog/2026/05/07/reuse-test-results)
+3. give you the tools and processes to reduce flakiness in the long run through advanced _Test Dashboard_ features (coming soon)
+
+<Image src={dashboard} alt="Screenshot of the Test Dashboard issue." />
+
+To start using TestLens right away:
+
+1. Find our GitHub app on the [GitHub Marketplace](https://github.com/marketplace/testlens-app/) and select a plan fitting your Java/Kotlin repositories.
+2. Install TestLens in your repositories by following the instructions.
+3. Add [testlens-app/setup-testlens@v1](https://github.com/testlens-app/setup-testlens) to your workflows that execute tests through Gradle or Maven.
+4. TestLens will create a Test Dashboard for each repository and will start posting comments on all Pull Requests that execute tests.
+
+<Image src={comment} alt="Screenshot of a Pull Request comment." />
+
+If are interested in purchasing TestLens for your commercial product hosted on GitHub, please [contact us directly](mailto:sales@testlens.app).
+Direct purchase via the GitHub marketplace will become available in the future.
+
+Happy and productive development!
