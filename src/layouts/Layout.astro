@@ -28,7 +28,7 @@ const { pagetitle, description, image, type = "website" } = Astro.props;
       property="og:description"
       content={description ? description : pagetitle}
     />
-    {image && <meta property="og:image" content={image} />}
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
     <meta property="og:url" content={Astro.url} />
     <meta property="og:type" content={type} />
 
