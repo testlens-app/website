@@ -43,15 +43,4 @@ const { pagetitle, description, image, type = "website" } = Astro.props;
     </main>
     <Footer />
   </body>
-
-  <script is:inline>
-    document.querySelectorAll("[data-signup-trigger]").forEach(button => {
-      button.addEventListener("click", toggleSignupForm);
-    });
-
-    function toggleSignupForm(event) {
-      document.getElementById("sign-up-form").classList.toggle("invisible");
-      event.preventDefault();
-    }
-  </script>
 </html>
