@@ -40,11 +40,22 @@ Personally identifiable information may include, but is not limited to:
 - Phone number
 - Address, State, Province, ZIP/Postal code, City
 
-### 3.3 Usage Data
+### 3.2 Usage Data
 
 We may collect information about how the Service is accessed and used ("Usage Data").
 We only collect data linked to the software projects (e.g. git repositories) you connect our service with.
 Only the data necessary to operate the service and provide its features to you is collected.
+
+### 3.3 Analytics
+
+This website uses the open-source web analytics service Umami.
+Umami enables us to collect and analyze data about the use of our website by visitors.
+Among other things, this includes page views, visit duration, the browser and operating system used, and the approximate country of origin of visitors.
+Umami does not use cookies and does not store any information on the user's device.
+IP addresses are not stored; all collected data is processed anonymously, so that no conclusions can be drawn about individual persons.
+We host Umami ourselves, so all analytics data remains with us and is not passed on to third parties.
+The use of Umami is based on Art. 6(1)(f) GDPR.
+The website operator has a legitimate interest in the anonymized analysis of user behavior in order to optimize its website.
 
 ## 4. How We Use Your Information
 
