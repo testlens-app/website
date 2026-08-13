@@ -1,6 +1,11 @@
 [build.environment]
   NODE_VERSION = "24"
 
+[[redirects]]
+  from = "/terms-of-use"
+  to = "/terms"
+  status = 301
+
 [[headers]]
   for = "/_astro/*.woff2"
     [headers.values]
