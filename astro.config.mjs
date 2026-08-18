@@ -29,7 +29,29 @@ export default defineConfig({
         light: './src/assets/logo.svg',
         dark: './src/assets/logo_inverted.svg',
         replacesTitle: true,
-      }
+      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/testlens-app/setup-testlens',
+        },
+        {
+          icon: 'mastodon',
+          label: 'Mastodon',
+          href: 'https://mastodon.social/@testlens',
+        },
+        {
+          icon: 'blueSky',
+          label: 'Bluesky',
+          href: 'https://bsky.app/profile/testlens.app',
+        },
+        {
+          icon: 'linkedin',
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/company/testlens/',
+        },
+      ],
     }),
     mdx(),
   ],
