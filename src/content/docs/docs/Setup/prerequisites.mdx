@@ -4,7 +4,7 @@ description: Prerequisites for using TestLens
 sidebar:
     order: 0
 ---
-import { Aside } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
 
 ## Build Requirements
 
@@ -20,10 +20,14 @@ TODO add list of JUnit Platform compatible testing frameworks
 
 Before you can start using TestLens you need to install the TestLens GitHub app from the [GitHub Marketplace](https://github.com/marketplace/testlens-app):
 
-1. Choose the user or organization account you want to install TestLens for
-2. Choose a plan that matches your account
-3. Click on "Install" or "Install it for free"
-4. Complete the marketplace flow
+<Steps>
+
+  1. Choose the user or organization account you want to install TestLens for
+  2. Choose a plan that matches your account
+  3. Click on "Install" or "Install it for free"
+  4. Complete the marketplace flow
+
+</Steps>
 
 After the marketplace flow is completed, the GitHub app will be installed in the account you selected in step 1.
 
@@ -32,6 +36,7 @@ After the marketplace flow is completed, the GitHub app will be installed in the
 To collect data about test runs, TestLens needs to instrument your build.
 Therefore, you need to add the [`testlens-app/setup-testlens`](https://github.com/testlens-app/setup-testlens) action to your GitHub Actions workflows.
 
-<Aside type="tip" >
-  Please refer to [Gradle](../gradle) and [Maven](../maven) for concrete instructions.
-</Aside>
+<CardGrid>
+  <LinkCard title="Gradle" href="../gradle" description="Setup instructions for Gradle builds" />
+  <LinkCard title="Maven" href="../maven" description="Setup instructions for Maven builds" />
+</CardGrid>
