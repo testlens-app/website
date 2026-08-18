@@ -4,7 +4,8 @@ description: Prerequisites for using TestLens
 sidebar:
   order: 1
 ---
-import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
+
+import { LinkCard, CardGrid, Steps } from "@astrojs/starlight/components";
 
 ## Build Requirements
 
@@ -22,10 +23,10 @@ Before you can start using TestLens you need to install the TestLens GitHub app 
 
 <Steps>
 
-  1. Choose the user or organization account you want to install TestLens for
-  2. Choose a plan that matches your account
-  3. Click on "Install" or "Install it for free"
-  4. Complete the marketplace flow
+1. Choose the user or organization account you want to install TestLens for
+2. Choose a plan that matches your account
+3. Click on "Install" or "Install it for free"
+4. Complete the marketplace flow
 
 </Steps>
 
@@ -37,6 +38,14 @@ To collect data about test runs, TestLens needs to instrument your build.
 Therefore, you need to add the [`testlens-app/setup-testlens`](https://github.com/testlens-app/setup-testlens) action to your GitHub Actions workflows.
 
 <CardGrid>
-  <LinkCard title="Gradle" href="/docs/setup/gradle" description="Setup instructions for Gradle builds" />
-  <LinkCard title="Maven" href="/docs/setup/maven" description="Setup instructions for Maven builds" />
+  <LinkCard
+    title="Gradle"
+    href="/docs/setup/gradle"
+    description="Setup instructions for Gradle builds"
+  />
+  <LinkCard
+    title="Maven"
+    href="/docs/setup/maven"
+    description="Setup instructions for Maven builds"
+  />
 </CardGrid>

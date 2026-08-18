@@ -36,9 +36,9 @@ export default defineConfig({
         replacesTitle: true,
       },
       customCss: [
-        './src/styles/global.css',
-        '@fontsource-variable/google-sans-flex/slnt.css',
-        '@fontsource-variable/google-sans-code/index.css',
+        "./src/styles/global.css",
+        "@fontsource-variable/google-sans-flex/slnt.css",
+        "@fontsource-variable/google-sans-code/index.css",
       ],
       social: [
         {
@@ -62,7 +62,7 @@ export default defineConfig({
           href: "https://www.linkedin.com/company/testlens/",
         },
       ],
-      sidebar: ['Introduction', 'Setup', 'Features'].map((label) => ({
+      sidebar: ["Introduction", "Setup", "Features"].map(label => ({
         label,
         items: [{ autogenerate: { directory: `docs/${label}` } }],
       })),
