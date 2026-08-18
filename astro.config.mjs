@@ -25,6 +25,7 @@ export default defineConfig({
     icon(),
     starlight({
       title: "TestLens Documentation",
+      favicon: 'favicon.png',
       logo: {
         light: './src/assets/logo.svg',
         dark: './src/assets/logo_inverted.svg',
