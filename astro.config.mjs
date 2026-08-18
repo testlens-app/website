@@ -9,6 +9,8 @@ import icon from "astro-icon";
 
 import mdx from "@astrojs/mdx";
 
+import starlight from "@astrojs/starlight";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -18,5 +20,10 @@ export default defineConfig({
     },
   },
   site: "https://testlens.app",
-  integrations: [react(), icon(), mdx()],
+  integrations: [
+    react(),
+    icon(),
+    starlight({ title: "TestLens Documentation" }),
+    mdx(),
+  ],
 });
