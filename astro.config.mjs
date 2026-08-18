@@ -34,6 +34,11 @@ export default defineConfig({
         dark: "./src/assets/logo_inverted.svg",
         replacesTitle: true,
       },
+      customCss: [
+        './src/styles/global.css',
+        '@fontsource-variable/google-sans-flex/slnt.css',
+        '@fontsource-variable/google-sans-code/index.css',
+      ],
       social: [
         {
           icon: "github",
