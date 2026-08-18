@@ -9,6 +9,8 @@ import icon from "astro-icon";
 
 import mdx from "@astrojs/mdx";
 
+import mermaid from "astro-mermaid";
+
 import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
@@ -23,34 +25,35 @@ export default defineConfig({
   integrations: [
     react(),
     icon(),
+    mermaid(),
     starlight({
       title: "TestLens Documentation",
-      favicon: 'favicon.png',
+      favicon: "favicon.png",
       logo: {
-        light: './src/assets/logo.svg',
-        dark: './src/assets/logo_inverted.svg',
+        light: "./src/assets/logo.svg",
+        dark: "./src/assets/logo_inverted.svg",
         replacesTitle: true,
       },
       social: [
         {
-          icon: 'github',
-          label: 'GitHub',
-          href: 'https://github.com/testlens-app/setup-testlens',
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/testlens-app/setup-testlens",
         },
         {
-          icon: 'mastodon',
-          label: 'Mastodon',
-          href: 'https://mastodon.social/@testlens',
+          icon: "mastodon",
+          label: "Mastodon",
+          href: "https://mastodon.social/@testlens",
         },
         {
-          icon: 'blueSky',
-          label: 'Bluesky',
-          href: 'https://bsky.app/profile/testlens.app',
+          icon: "blueSky",
+          label: "Bluesky",
+          href: "https://bsky.app/profile/testlens.app",
         },
         {
-          icon: 'linkedin',
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/company/testlens/',
+          icon: "linkedin",
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/company/testlens/",
         },
       ],
     }),
