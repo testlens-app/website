@@ -26,7 +26,8 @@ export default defineConfig({
     starlight({
       title: "TestLens Documentation",
       logo: {
-        src: './src/assets/logo.svg',
+        light: './src/assets/logo.svg',
+        dark: './src/assets/logo_inverted.svg',
         replacesTitle: true,
       }
     }),
