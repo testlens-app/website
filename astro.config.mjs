@@ -23,7 +23,13 @@ export default defineConfig({
   integrations: [
     react(),
     icon(),
-    starlight({ title: "TestLens Documentation" }),
+    starlight({
+      title: "TestLens Documentation",
+      logo: {
+        src: './src/assets/logo.svg',
+        replacesTitle: true,
+      }
+    }),
     mdx(),
   ],
 });
