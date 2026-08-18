@@ -2,7 +2,7 @@
 title: Pull Request Reporting
 description: Pull Request Reporting
 sidebar:
-  order: 1
+  order: 3
 ---
 
 Each time you push a new commit to a Pull Request, TestLens posts a comment with _information_ and _controls_

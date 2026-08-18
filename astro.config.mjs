@@ -61,6 +61,20 @@ export default defineConfig({
           href: "https://www.linkedin.com/company/testlens/",
         },
       ],
+      sidebar: [
+        {
+          label: 'Introduction',
+          items: [{ autogenerate: { directory: 'docs/Introduction' } }],
+        },
+        {
+          label: 'Setup',
+          items: [{ autogenerate: { directory: 'docs/Setup' } }],
+        },
+        {
+          label: 'Features',
+          items: [{ autogenerate: { directory: 'docs/Features' } }],
+        },
+      ],
     }),
     mdx(),
   ],

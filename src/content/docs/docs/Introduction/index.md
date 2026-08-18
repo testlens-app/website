@@ -1,16 +1,15 @@
 ---
-title: Introduction
-description: TestLens documentation
+title: How it works
+description: Introduction to TestLens including an overview about how it works
+slug: docs
 sidebar:
   order: 0
 ---
 
 TestLens is a platform that captures data about all your tests while they are running.
 This page explains what is does, how it works, which features it has.
-If you want to onboard your own project quickly, head over to the [Setup section](setup/prerequisites).
-If you're interested TestLens' features, go to the [Features section](features/pr-comment).
-
-## How it works
+If you want to onboard your own project quickly, head over to [Prerequisites](/docs/introduction/prerequisites).
+If you're interested TestLens' features, go to the [Features section](/docs/features/pr-comment).
 
 TestLens consists of three parts:
 
@@ -45,5 +44,5 @@ Currently [Gradle](https://gradle.org) and [Apache Maven&trade;](https://maven.a
 Furthermore tests must be executed via a test engine that runs on top of [JUnit Platform](https://junit.org).
 This includes &mdash; but is not limted to &mdash; [JUnit Jupiter](https://docs.junit.org/current/writing-tests/intro.html), [Spock Framework](https://spockframework.org), and [KoTest](https://kotest.io).
 The instrumentation client opens a connection to the TestLens GitHub App and streams data about the test environment, test results, and test failures while your tests are running.
-GitHub notifies TestLens once any workflow completes, and TestLens responds to this event by posting an [informative comment](features/pr-comment), that summarizes the results of any test execution that happened while the workflow was running.
-Additionally TestLens detects flaky tests across all GitHub Actions workflow executions and summarizes them for you in the [Test Dashboard issue](features/dashboard).
+GitHub notifies TestLens once any workflow completes, and TestLens responds to this event by posting an [informative comment](/docs/features/pr-comment), that summarizes the results of any test execution that happened while the workflow was running.
+Additionally TestLens detects flaky tests across all GitHub Actions workflow executions and summarizes them for you in the [Test Dashboard issue](/docs/features/dashboard).
