@@ -1,6 +1,8 @@
 ---
 title: Introduction
 description: TestLens documentation
+sidebar:
+  order: 0
 ---
 
 Introduction

@@ -1,6 +1,8 @@
 ---
 title: Test Dashboard
 description: Test Dashboard
+sidebar:
+  order: 2
 ---
 
 Test Dashboard, Test Dashboard, Test Dashboard
