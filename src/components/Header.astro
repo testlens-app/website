@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import logo from "../assets/logo.svg";
+import InstallButton from "./home/InstallButton.astro";
 
 const menuItems = [
     { name: "Blog", href: "/blog" },
@@ -24,15 +25,7 @@ const menuItems = [
           </a>
         ))
       }
-      <a
-        class="mx-2"
-        href="https://github.com/testlens-app"
-        title="GitHub"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon name="github" class="inline-flex h-6 w-6" />
-      </a>
+      <InstallButton compact />
     </nav>
 
     <!-- Mobile Menu Button -->
