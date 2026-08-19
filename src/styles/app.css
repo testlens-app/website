@@ -1,0 +1,2 @@
+/* Full Tailwind Preflight for non-Starlight pages only. */
+@import "tailwindcss/preflight.css" layer(base);

@@ -35,8 +35,5 @@
       "image": "05_success.png",
       "alt": "Pull request merged"
     }
-  ],
-  "actions": {
-    "join": "Install the GitHub app to streamline your test suite with TestLens."
-  }
+  ]
 }

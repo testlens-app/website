@@ -1,9 +1,13 @@
 ---
-
+const { compact = false } = Astro.props;
+const size = compact ? "px-4 py-2 text-sm" : "px-6 py-3 text-lg";
 ---
 
 <a
-  class="inline-block rounded-xl bg-green-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-green-700"
+  class:list={[
+    "inline-block rounded-xl bg-green-600 font-semibold text-white transition hover:bg-green-700",
+    size,
+  ]}
   href="https://github.com/marketplace/testlens-app"
 >
   Get TestLens

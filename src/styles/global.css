@@ -1,4 +1,9 @@
-@import "tailwindcss";
+@layer base, starlight, theme, components, utilities;
+
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
 @plugin "@tailwindcss/typography";
 
 @font-face {
@@ -17,4 +22,35 @@
 @theme {
   --font-sans: "Google Sans Flex Variable", sans-serif;
   --font-mono: "Google Sans Code Variable", sans-serif;
+  --sl-font: "Google Sans Flex Variable", sans-serif;
+  --sl-font-mono: "Google Sans Code Variable", monospace;
+  --color-accent-50: var(--color-green-50);
+  --color-accent-100: var(--color-green-100);
+  --color-accent-200: var(--color-green-200);
+  --color-accent-300: var(--color-green-300);
+  --color-accent-400: var(--color-green-400);
+  --color-accent-500: var(--color-green-500);
+  --color-accent-600: var(--color-green-600);
+  --color-accent-700: var(--color-green-700);
+  --color-accent-800: var(--color-green-800);
+  --color-accent-900: var(--color-green-900);
+  --color-accent-950: var(--color-green-950);
+  --color-gray-50: var(--color-slate-50);
+  --color-gray-100: var(--color-slate-100);
+  --color-gray-200: var(--color-slate-200);
+  --color-gray-300: var(--color-slate-300);
+  --color-gray-400: var(--color-slate-400);
+  --color-gray-500: var(--color-slate-500);
+  --color-gray-600: var(--color-slate-600);
+  --color-gray-700: var(--color-slate-700);
+  --color-gray-800: var(--color-slate-800);
+  --color-gray-900: var(--color-slate-900);
+  --color-gray-950: var(--color-slate-950);
+}
+
+/* Different font for Starlight headings (page title + in-content headings). */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6),
+h1#_top {
+  font-family: "Google Sans Flex Rond", sans-serif;
+  font-variation-settings: "ROND" 50;
 }
