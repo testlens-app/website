@@ -13,8 +13,8 @@ as soon as the failure appears and not only after all jobs finished.
 ## Comment Lifecycle
 
 - The TestLens comment shows the test status of running and completed jobs of the latest commit on your Pull Request.
-- The comment is live: as soon as a test failure occurs, the comment is updated
-- When a new commit is pushed to your Pull Request, the TestLens comment for the previous commit is minimized
+- The comment is live: as soon as a test failure occurs, the comment is updated.
+- When a new commit is pushed to your Pull Request, the TestLens comment for the previous commit is minimized.
   Once TestLens creates a comment for your new commit, the previous comment is removed
 
 ![pr-comment-min.png](../../../../assets/docs/pr-comment-min.png)
