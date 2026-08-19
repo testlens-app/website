@@ -15,7 +15,7 @@ as soon as the failure appears and not only after all jobs finished.
 - The TestLens comment shows the test status of running and completed jobs of the latest commit on your Pull Request.
 - The comment is live: as soon as a test failure occurs, the comment is updated.
 - When a new commit is pushed to your Pull Request, the TestLens comment for the previous commit is minimized.
-  Once TestLens creates a comment for your new commit, the previous comment is removed
+  Once TestLens creates a comment for your new commit, the previous comment is removed.
 
 ![pr-comment-min.png](../../../../assets/docs/pr-comment-min.png)
 
@@ -48,8 +48,8 @@ Each row shows the status of all reruns. You can see, for example, if a test fai
   (may happen in dynamic test setups)
 - 🛑 _Aborted_ – Test was aborted in this (re)run
 
-For each test, you also see a flakiness score (in %) that indicated if the test was flaky before. A flakiness score
-that is higher that 0% may indicate that a failure is not caused by a change in the current PR, but rather a known
+For each test, you also see a flakiness score (in %) that indicates if the test was flaky before. A flakiness score
+that is higher than 0% may indicate that a failure is not caused by a change in the current PR, but rather a known
 flakiness issue. And that hence a rerun may be sufficient as solution for the current PR.
 
 ### Test Failures
@@ -57,14 +57,14 @@ flakiness issue. And that hence a rerun may be sufficient as solution for the cu
 If the [Test Summary](#test-summary) tables contain test failures, the failure details can be inspected here.
 This gives further context about why a test fails. Based on this, you can either go about fixing issues in your PR
 or trigger a rerun via the [Rerun Controls](#rerun-controls) if the failure is due to flakiness. In cases where a
-know issue should be temporarily ignored, you can mute selected tests in the [Rerun Controls](#rerun-controls) before triggering a rerun.
+known issue should be temporarily ignored, you can mute selected tests in the [Rerun Controls](#rerun-controls) before triggering a rerun.
 
 ### Rerun Controls
 
 The rerun controls allow you to directly trigger a rerun of GitHub action workflows that contain failed tests.
-This has advantages over triggerring such reruns in the native GitHub UI:
+This has advantages over triggering such reruns in the native GitHub UI:
 
-- `🔲 Rerun jobs` button at your fingertipps – TestLens automatically selects which workflows/jobs need a rerun
-- `🔲 ♻️ Only rerun the tests that failed or were muted before` to speedup the rerun by not re-executing tests
+- `🔲 Rerun jobs` button at your fingertips – TestLens automatically selects which workflows/jobs need a rerun
+- `🔲 ♻️ Only rerun the tests that failed or were muted before` to speed up the rerun by not re-executing tests
   that were already successful
 - `🔲 TestClass > testName()` to mute a test – available for each test that failed in previous (re)runs

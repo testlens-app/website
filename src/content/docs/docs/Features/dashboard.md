@@ -22,7 +22,7 @@ The severity of test flakiness is indicated by one of the following icons:
 For each branch, there are two sections:
 
 - _Branch and pull request builds:_ only tests with _flaky_ results are included. Since it's expected for pull requests to initially contain some test failures, failed results are excluded.
-- _Branch builds:_ both tests that had _failed_ or _flaky_ are included. Including failed outcomes can be useful to discover tests that are problematic because the regularly or occasionally fail after pull requests have been merged.
+- _Branch builds:_ both tests that had _failed_ or _flaky_ are included. Including failed outcomes can be useful to discover tests that are problematic because they regularly or occasionally fail after pull requests have been merged.
 
 For each section, all tasks (for Gradle) or projects (for Maven) that had relevant test results in the last 30 days are listed.
 The table shown for each task/project is ordered by flakiness so the most flaky tests are at the top.
