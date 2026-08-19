@@ -40,9 +40,9 @@ flowchart TD
 ```
 
 When a GitHub Actions workflow runs in your repository and the `setup-testlens` action is present, the action injects TestLens' instrumentation client into each JVM running tests.
-Currently [Gradle](https://gradle.org) and [Apache Maven&trade;](https://maven.apache.org) are supported.
-Furthermore tests must be executed via a test engine that runs on top of [JUnit Platform](https://junit.org).
+Currently, [Gradle](https://gradle.org) and [Apache Maven&trade;](https://maven.apache.org) are supported.
+Furthermore, tests must be executed via a test engine that runs on top of [JUnit Platform](https://junit.org).
 This includes &mdash; but is not limted to &mdash; [JUnit Jupiter](https://docs.junit.org/current/writing-tests/intro.html), [Spock Framework](https://spockframework.org), and [KoTest](https://kotest.io).
 The instrumentation client opens a connection to the TestLens GitHub App and streams data about the test environment, test results, and test failures while your tests are running.
 GitHub notifies TestLens once any workflow completes, and TestLens responds to this event by posting an [informative comment](/docs/features/pr-comment), that summarizes the results of any test execution that happened while the workflow was running.
-Additionally TestLens detects flaky tests across all GitHub Actions workflow executions and summarizes them for you in the [Test Dashboard issue](/docs/features/dashboard).
+Additionally, TestLens detects flaky tests across all GitHub Actions workflow executions and summarizes them for you in the [Test Dashboard issue](/docs/features/dashboard).
