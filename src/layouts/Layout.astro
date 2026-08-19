@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/app.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { ANALYTICS_SRC, ANALYTICS_WEBSITE_ID } from "../data/analytics";
 import "@fontsource-variable/google-sans-flex/slnt";
 import "@fontsource-variable/google-sans-code";
 
@@ -38,8 +39,8 @@ const { pagetitle, description, image, type = "website" } = Astro.props;
     <script
       is:inline
       defer
-      src="https://analytics.testlens.app/script.js"
-      data-website-id="7a3c506b-d555-4a52-81cd-adea60b160f3"></script>
+      src={ANALYTICS_SRC}
+      data-website-id={ANALYTICS_WEBSITE_ID}></script>
   </head>
   <body
     class="text-dark flex min-h-screen flex-col bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-sans"

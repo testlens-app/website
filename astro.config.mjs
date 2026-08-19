@@ -13,6 +13,8 @@ import mermaid from "astro-mermaid";
 
 import starlight from "@astrojs/starlight";
 
+import { ANALYTICS_SRC, ANALYTICS_WEBSITE_ID } from "./src/data/analytics";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -30,6 +32,16 @@ export default defineConfig({
       title: "TestLens Documentation",
       favicon: "favicon.png",
       pagination: false,
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            defer: true,
+            src: ANALYTICS_SRC,
+            "data-website-id": ANALYTICS_WEBSITE_ID,
+          },
+        },
+      ],
       logo: {
         light: "./src/assets/logo.svg",
         dark: "./src/assets/logo_inverted.svg",
