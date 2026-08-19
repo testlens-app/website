@@ -17,6 +17,8 @@ as soon as the failure appears and not only after all jobs finished.
 - When a new commit is pushed to your Pull Request, the TestLens comment for the previous commit is minimized
   Once TestLens creates a comment for your new commit, the previous comment is removed
 
+![pr-comment-min.png](../../../../assets/docs/pr-comment-min.png)
+
 ## Comment Structure
 
 The comment consists of three sections:
@@ -24,6 +26,8 @@ The comment consists of three sections:
 - [Test Summary](#test-summary) – a live summary of problematic tests in all job (re)runs for the current commit
 - [Test Failures](#test-failures) – details of failing tests: available for your inspection as soon as a failure occurs
 - [Rerun Controls](#rerun-controls) – checkboxes to schedule reruns to counteract flakiness with the option to mute selected tests
+
+![pr-comment.png](../../../../assets/docs/pr-comment.png)
 
 ### Test Summary
 
