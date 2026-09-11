@@ -21,13 +21,19 @@ as soon as the failure appears and not only after all jobs finished.
 
 ## Comment Structure
 
-The comment consists of three sections:
+The comment consists of the following sections:
 
+- [Failed Jobs without Test Failures](#failed-jobs-without-test-failures) - links to the logs of jobs that failed for other reasons
 - [Test Summary](#test-summary) – a live summary of problematic tests in all job (re)runs for the current commit
 - [Test Failures](#test-failures) – details of failing tests: available for your inspection as soon as a failure occurs
 - [Rerun Controls](#rerun-controls) – checkboxes to schedule reruns to counteract flakiness with the option to mute selected tests
 
 ![pr-comment.png](../../../../assets/docs/pr-comment.png)
+
+### Failed Jobs without Test Failures
+
+If jobs failed for other reasons than test failures, for example a _compile_ or _lint_ job, you find direct links to
+the logs of these jobs here.
 
 ### Test Summary
 
