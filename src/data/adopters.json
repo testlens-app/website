@@ -1,0 +1,27 @@
+[
+  {
+    "name": "JUnit Framework",
+    "url": "https://junit.org",
+    "logo": "junit.svg"
+  },
+  {
+    "name": "AssertJ",
+    "url": "https://assertj.github.io",
+    "logo": "assertj.svg"
+  },
+  {
+    "name": "Apache Groovy",
+    "url": "https://groovy.apache.org",
+    "logo": "groovy.svg"
+  },
+  {
+    "name": "Apache Grails",
+    "url": "https://grails.apache.org",
+    "logo": "grails.svg"
+  },
+  {
+    "name": "Spock Framework",
+    "url": "https://spockframework.org",
+    "logo": "spock.svg"
+  }
+]
