@@ -1,0 +1,45 @@
+---
+title: "Leading Open Source Projects Trust TestLens"
+description: |
+  JUnit Framework, AssertJ, Apache Groovy, Apache Grails, and Spock Framework
+  are early adopters of TestLens.
+pubDate: "2026-09-16"
+image: "blog/early-adopters.png"
+---
+
+import { Image } from "astro:assets";
+import adopters from "../../assets/blog/early-adopters.png";
+
+When we started TestLens, we knew who we were building it for: teams that take
+their test suites seriously. So it means a lot that some of the most widely used
+testing projects in the JVM world now use TestLens on their own pull requests.
+
+Today we're happy to announce that these projects are early adopters:
+
+<Image
+  src={adopters}
+  class="mx-auto w-auto max-w-xl"
+  alt="Screenshot of the TestLens homepage showing a section titled 'Trusted by leading open source projects' with the logos of JUnit Framework, AssertJ, Apache Groovy, Apache Grails, and Spock Framework."
+/>
+
+- [JUnit Framework](https://junit.org), the de facto standard testing framework for the JVM.
+- [AssertJ](https://assertj.github.io), the fluent assertions library used in countless Java codebases.
+- [Apache Groovy](https://groovy.apache.org), the dynamic language for the JVM with its own rich testing ecosystem.
+- [Apache Grails](https://grails.apache.org), the web framework built on Groovy and Spring Boot.
+- [Spock Framework](https://spockframework.org), the highly expressive testing and specification framework for Groovy and Java.
+
+You'll find their logos on our [homepage](https://testlens.app), and more are
+on the way.
+
+Flaky tests are not a hypothetical problem for these teams. The JUnit
+repository alone runs thousands of tests across many JDK versions and operating
+systems on every change, and Grails and Groovy do the same at their scale.
+Keeping signal high in that much CI output is exactly the problem TestLens
+works on, so having the people who maintain these suites use it for their own
+work is the best feedback we could ask for.
+
+If your project or team wrestles with flaky tests too, [get
+TestLens](https://github.com/marketplace/testlens-app) from the GitHub
+Marketplace or contact us at [team@testlens.app](mailto:team@testlens.app).
+
+Happy testing!
