@@ -40,11 +40,10 @@ const { pagetitle, description, image, type = "website" } = Astro.props;
       is:inline
       defer
       src={ANALYTICS_SRC}
-      data-website-id={ANALYTICS_WEBSITE_ID}></script>
+      data-website-id={ANALYTICS_WEBSITE_ID}
+    ></script>
   </head>
-  <body
-    class="text-dark flex min-h-screen flex-col bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-sans"
-  >
+  <body class="text-dark flex min-h-screen flex-col bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-sans">
     <Header />
     <main class="mx-auto flex-grow px-4 py-8 lg:w-5xl">
       <slot />

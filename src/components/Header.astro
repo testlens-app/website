@@ -11,20 +11,18 @@ const menuItems = [
 ---
 
 <header class="sticky top-0 bg-white shadow">
-  <div
-    class="mx-auto flex max-w-5xl items-center justify-between px-4 py-2 md:py-4"
-  >
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-2 md:py-4">
     <a href="/" title="TestLens" class="flex w-fit items-center space-x-3">
-      <h1><Image src={logo} alt="TestLens" class="w-40 md:w-60" /></h1>
+      <h1>
+        <Image src={logo} alt="TestLens" class="w-40 md:w-60" />
+      </h1>
     </a>
     <nav class="ml-20 hidden flex-col items-center space-x-8 md:block">
-      {
-        menuItems.map(item => (
-          <a href={item.href} title={item.name}>
-            {item.name}
-          </a>
-        ))
-      }
+      {menuItems.map(item => (
+        <a href={item.href} title={item.name}>
+          {item.name}
+        </a>
+      ))}
       <InstallButton compact />
     </nav>
 
@@ -37,13 +35,11 @@ const menuItems = [
   </div>
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden">
-    {
-      menuItems.map(item => (
-        <a href={item.href} class="hover:bg-background-offset block px-4 py-2">
-          {item.name}
-        </a>
-      ))
-    }
+    {menuItems.map(item => (
+      <a href={item.href} class="hover:bg-background-offset block px-4 py-2">
+        {item.name}
+      </a>
+    ))}
     <div class="px-4 py-2">
       <InstallButton compact />
     </div>

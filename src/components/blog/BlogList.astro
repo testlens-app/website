@@ -11,7 +11,9 @@ const { blogs } = Astro.props;
       Recent posts
     </h1>
     <ul class="mt-4 space-y-6">
-      {blogs.map((blog: Blog) => <BlogItem blog={blog} />)}
+      {blogs.map((blog: Blog) => (
+        <BlogItem blog={blog} />
+      ))}
     </ul>
   </div>
 </section>

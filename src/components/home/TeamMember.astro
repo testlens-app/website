@@ -3,9 +3,7 @@ import SocialMediaLink from "./SocialMediaLink.astro";
 const { member } = Astro.props;
 ---
 
-<div
-  class="flex-1 space-x-6 rounded-2xl bg-white p-4 shadow-md hover:shadow-lg"
->
+<div class="flex-1 space-x-6 rounded-2xl bg-white p-4 shadow-md hover:shadow-lg">
   <div class="flex space-x-4">
     <img
       class="h-15 w-15 rounded-full border-2 border-slate-500 object-cover"
@@ -15,46 +13,36 @@ const { member } = Astro.props;
     <div>
       <h2 class="text-lg font-semibold text-gray-800">{member.name}</h2>
       <div class="mt-1.5 flex space-x-4">
-        {
-          member.socialLinks.github && (
-            <SocialMediaLink
-              href={member.socialLinks.github}
-              title="GitHub"
-              color="gray"
-            />
-          )
-        }
-        {
-          member.socialLinks.mastodon && (
-            <SocialMediaLink
-              href={member.socialLinks.mastodon}
-              title="Mastodon"
-              color="purple"
-            />
-          )
-        }
-        {
-          member.socialLinks.linkedin && (
-            <SocialMediaLink
-              href={member.socialLinks.linkedin}
-              title="LinkedIn"
-              color="blue"
-            />
-          )
-        }
-        {
-          member.socialLinks.youtube && (
-            <SocialMediaLink
-              href={member.socialLinks.youtube}
-              title="YouTube"
-              color="red"
-            />
-          )
-        }
+        {member.socialLinks.github && (
+          <SocialMediaLink
+            href={member.socialLinks.github}
+            title="GitHub"
+            color="gray"
+          />
+        )}
+        {member.socialLinks.mastodon && (
+          <SocialMediaLink
+            href={member.socialLinks.mastodon}
+            title="Mastodon"
+            color="purple"
+          />
+        )}
+        {member.socialLinks.linkedin && (
+          <SocialMediaLink
+            href={member.socialLinks.linkedin}
+            title="LinkedIn"
+            color="blue"
+          />
+        )}
+        {member.socialLinks.youtube && (
+          <SocialMediaLink
+            href={member.socialLinks.youtube}
+            title="YouTube"
+            color="red"
+          />
+        )}
       </div>
     </div>
   </div>
-  <p class="mt-3 flex-1 text-left text-sm text-slate-700">
-    {member.bio}
-  </p>
+  <p class="mt-3 flex-1 text-left text-sm text-slate-700">{member.bio}</p>
 </div>

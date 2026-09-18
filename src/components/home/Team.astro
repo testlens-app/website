@@ -9,6 +9,8 @@ const { members } = Astro.props;
     Brought to you by leading developer productivity experts.
   </p>
   <div class="flex flex-col gap-8 align-top md:flex-row">
-    {members.map(member => <TeamMember member={member} />)}
+    {members.map(member => (
+      <TeamMember member={member} />
+    ))}
   </div>
 </section>
