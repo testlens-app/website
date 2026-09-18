@@ -44,13 +44,11 @@ const blogParams = getBlogParams(blog);
           datetime={new Date(blog.data.pubDate).toLocaleDateString()}
           class="text-sm"
         >
-          {
-            new Date(blog.data.pubDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }
+          {new Date(blog.data.pubDate).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
         </time>
         <Content />
       </div>
