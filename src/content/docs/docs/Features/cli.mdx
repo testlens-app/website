@@ -19,12 +19,24 @@ Download the archive for your operating system and architecture from the [latest
 | macOS   | `testlens-macos-<arch>-<version>.zip`   |
 | Windows | `testlens-windows-<arch>-<version>.zip` |
 
-Unzip the archive and put the `testlens` binary somewhere on your `PATH`:
+Unzip the archive and put the `testlens` binary somewhere on your `PATH`.
+
+On Unix (Linux and macOS):
 
 ```sh
 unzip testlens-linux-<arch>-<version>.zip
 sudo mv testlens-*/testlens /usr/local/bin/
 ```
+
+On Windows (PowerShell), create a directory on your `PATH` and move the binary there:
+
+```powershell
+Expand-Archive testlens-windows-<arch>-<version>.zip
+New-Item -ItemType Directory -Force "$env:LOCALAPPDATA\Programs\testlens"
+Move-Item testlens-windows-<arch>-<version>\testlens.exe "$env:LOCALAPPDATA\Programs\testlens"
+```
+
+`$env:LOCALAPPDATA\Programs` is already on your `PATH` on recent Windows versions; if the last command's target isn't, add the directory via _Settings → System → About → Advanced system settings → Environment Variables_.
 
 Verify the installation:
 
