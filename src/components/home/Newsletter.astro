@@ -1,0 +1,109 @@
+---
+// Brevo signup form. Class names like `sib-*`, `form__entry`, `entry__error`
+// and `input` are hooks used by Brevo's main.js and must be kept.
+const panel =
+  "sib-form-message-panel mx-auto mb-4 hidden max-w-xl rounded-lg border px-4 py-3 text-left [&.sib-form-message-panel--active]:block";
+---
+
+<section id="sib-form-container" class="mt-10 text-center sm:mt-15 sm:mb-10">
+  <h3 class="text-dark mb-4 text-3xl font-bold">Newsletter</h3>
+  <p class="text-muted mt-4 mb-6">
+    Subscribe to our newsletter and stay up-to-date.
+  </p>
+
+  <div
+    id="error-message"
+    class:list={[panel, "border-red-400 bg-red-50 text-red-800"]}
+  >
+    <span class="sib-form-message-panel__inner-text">
+      Your subscription could not be saved. Please try again.
+    </span>
+  </div>
+  <div
+    id="success-message"
+    class:list={[panel, "border-green-500 bg-green-50 text-green-800"]}
+  >
+    <span class="sib-form-message-panel__inner-text">
+      Your subscription has been successful.
+    </span>
+  </div>
+
+  <div id="sib-container" class="mx-auto max-w-xl">
+    <form
+      id="sib-form"
+      method="POST"
+      action="https://1ad564fb.sibforms.com/serve/MUIFACDK_xsGeCjYaMRlD7Aynba8d4Kud1ejgyNO5amMLMyqDySE6HFs-tKiWlbkxRgmMyq_7zI62MT0a1KOoDXs2ke6uKF-iG6A_r0cbVyV72LAKGkiLmcZzefsti5D1o6_7rXhLmbNRbh_QYLvXKhZqsoexTELhYTWFr2H0wIG596aMyWFKDLeF7LJ-QwAs5UYtLkdHVFNYkVoJw=="
+      data-type="subscription"
+    >
+      <div class="sib-input">
+        <div class="form__entry text-left">
+          <label for="EMAIL" class="sr-only">
+            Email address
+          </label>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <input
+              class="input flex-grow rounded-xl border border-slate-300 bg-white px-4 py-3 focus:border-green-600 focus:ring-2 focus:ring-green-600/30 focus:outline-none"
+              type="email"
+              id="EMAIL"
+              name="EMAIL"
+              autocomplete="email"
+              placeholder="you@example.com"
+              data-required="true"
+              required
+            />
+            <button
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-green-700 disabled:opacity-60"
+              form="sib-form"
+              type="submit"
+            >
+              <svg
+                class="sib-hide-loader-icon size-5 animate-spin fill-current [&.sib-hide-loader-icon]:hidden"
+                viewBox="0 0 512 512"
+              >
+                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path>
+              </svg>
+              Subscribe
+            </button>
+          </div>
+          <label class="entry__error entry__error--primary mt-2 hidden rounded-lg border border-red-400 bg-red-50 px-3 py-2 text-red-800"></label>
+        </div>
+      </div>
+
+      <input
+        type="text"
+        name="email_address_check"
+        value=""
+        class="input--hidden hidden"
+      />
+      <input type="hidden" name="locale" value="en" />
+    </form>
+  </div>
+</section>
+
+<script is:inline>
+  window.REQUIRED_CODE_ERROR_MESSAGE = "Please choose a country code";
+  window.LOCALE = "en";
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
+    "The information provided is invalid. Please review the field format and try again.";
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+  window.GENERIC_INVALID_MESSAGE =
+    "The information provided is invalid. Please review the field format and try again.";
+  window.INVALID_NUMBER =
+    "The information provided is invalid. Please review the field format and try again.";
+  window.INVALID_DATE = "Please enter a valid date";
+  window.REQUIRED_MULTISELECT_MESSAGE = "Please select at least 1 option";
+  window.translation = {
+    common: {
+      selectedList: "{quantity} list selected",
+      selectedLists: "{quantity} lists selected",
+      selectedOption: "{quantity} selected",
+      selectedOptions: "{quantity} selected",
+    },
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script
+  is:inline
+  defer
+  src="https://sibforms.com/forms/end-form/build/main.js"
+></script>
