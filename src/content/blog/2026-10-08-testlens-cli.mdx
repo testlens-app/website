@@ -1,17 +1,88 @@
 ---
 title: "Introducing the TestLens CLI"
 description: |
-TODO
+  The TestLens CLI puts your test results on the command line: a TUI for
+  humans, plain text output for scripts and AI agents.
 pubDate: "2026-10-08"
-image: "blog/cli.png"
+image: "docs/tui.png"
 ---
 
-* Motivation: Why a CLI?
-  - PR comments are too restrictive to list all failure stacktraces
-  - PR comments are not the right tool for scripts for AI agents to access details about tests
-  - Not another web UI -- instead build a tool developers actually like using
-* How it works
-  - Asciinema recording
-  - Briefly describe AI use case
-* How to install -> link to docs
-* Call to action -> install TestLens
+Today we're proud to announce the [TestLens CLI](https://github.com/testlens-app/cli):
+your test results, right on the command line.
+
+So far, TestLens has lived in your browser, with the [PR comment](/docs/features/pr-comment/)
+during review and the [Test Dashboard](/docs/features/dashboard/) over time.
+That covers review and history, but not the place where development actually
+happens: the terminal.
+
+The PR comment summarizes your test results, and it does that job well. But a
+comment has limited space, and a failing build often has more failures than
+fit in it. Full stack traces and long expected-versus-actual diffs don't
+survive being squeezed into a comment. So we truncate, link out to the job
+log, and send you back into GitHub Actions to scroll through thousands of
+lines to find the one stack trace you needed. (This [comment on a Grails pull
+request](https://github.com/apache/grails-core/pull/16225#issuecomment-5415297214)
+is a good example: 69,330 tests ran, two of them failed, and each failure
+needed its own collapsible section to hold the stack trace.)
+
+And a browser page is no help to a script, which matters more now than when we
+designed those features: coding agents read stdout, not HTML. If you want your
+agent to fix a failing PR, the results have to be reachable from a command
+line.
+
+That's where the CLI comes in: `testlens`, a native binary you can download
+from the [CLI releases](https://github.com/testlens-app/cli/releases/latest).
+No Java installation needed. Today it has a single command,
+`testlens pr <number>`, which fetches the test results for a pull request
+from the same data that powers the PR comment.
+
+import AsciinemaPlayer from "../../components/AsciinemaPlayer.astro";
+
+<AsciinemaPlayer src="/blog/testlens-cli.cast" autoplay loop />
+
+The command looks at where it runs. In an interactive terminal it opens a
+terminal UI: a table of failing tests, aggregated across all runs on that
+commit, so a test that failed once and then passed shows up as flaky. Pick a
+row and you get the full picture for that test execution: which job and which
+Gradle task or Maven goal ran it, when it ran, the expected-versus-actual diff,
+and the complete stack trace. No log spelunking, no clicking through to
+GitHub Actions.
+
+In a pipe or a script, the same command prints plain text to stdout: a short
+summary, then every failing test with its attempts, diffs, and stack traces,
+grouped by job. Nothing is truncated, so an agent can read the entire failure
+and act on it.
+
+Without the plain text output, an agent that is asked to fix a failing PR has
+to reconstruct
+the same information by hand. It lists the workflow runs for the head commit,
+discovers the jobs, figures out which of them actually ran tests, downloads
+each job's log archive, and searches it for failure output. Each of those
+steps is a separate API round trip, and the searches rarely hit on the first
+try, so a real fix turns into many rounds of scraping before a single line of
+code changes. Even then the logs often don't contain what is needed. Gradle
+prints failed test names with only a short exception summary at its default
+log level; the full stack traces require configuring the `testLogging` block
+on the `Test` task (for example, `exceptionFormat = "full"`), which most
+builds don't do. And GitHub Actions truncates long log lines anyway.
+TestLens instrumentation captures the failures at the source, regardless of
+how the build is configured to log.
+
+For your agent, a prompt as short as this is enough:
+
+```
+Run `testlens pr 42` and fix the failing tests it reports.
+Commit and push the fix to the PR branch.
+```
+
+If you already use TestLens, install the CLI by following the steps for your
+operating system in our [documentation](/docs/features/cli/).
+It picks up the repository from your `origin` remote and your token from
+`$GITHUB_TOKEN` or `$GH_TOKEN`, so running `testlens pr 42` inside a clone is
+usually all it takes.
+
+If you don't use TestLens yet, install the [TestLens App](https://github.com/marketplace/testlens-app)
+and add the setup action to your workflows. Then the next red build on one of
+your pull requests is one command away.
+
+Happy testing!

@@ -1,2 +1,16 @@
 /* Full Tailwind Preflight for non-Starlight pages only. */
 @import "tailwindcss/preflight.css" layer(base);
+
+/* Blog pages are light-only, so code fences must not follow the OS color
+   scheme. Force the dark EC theme colors (--0) on token spans; the Starlight
+   rules otherwise pick dark-on-dark text under prefers-color-scheme: dark. */
+#markdown .expressive-code .ec-line :where(span[style^="--"]:not([class])) {
+  color: var(--0, inherit);
+  background-color: var(--0bg, transparent);
+  font-style: var(--0fs, inherit);
+  font-weight: var(--0fw, inherit);
+  text-decoration: var(--0td, inherit);
+}
+#markdown .expressive-code pre {
+  background: #23262f;
+}
