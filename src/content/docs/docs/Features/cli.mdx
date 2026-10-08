@@ -5,6 +5,8 @@ sidebar:
   order: 5
 ---
 
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
 The [TestLens CLI](https://github.com/testlens-app/cli) gives you access to your test results from the command line.
 Instead of clicking through GitHub Actions logs, you run one command and see which tests failed, where they ran, and why.
 
@@ -19,16 +21,20 @@ Download the archive for your operating system and architecture from the [latest
 | macOS   | `testlens-macos-<arch>-<version>.zip`   |
 | Windows | `testlens-windows-<arch>-<version>.zip` |
 
-Unzip the archive and put the `testlens` binary somewhere on your `PATH`.
+<Tabs>
+<TabItem label="Linux / macOS">
 
-On Unix (Linux and macOS):
+Unzip the archive and put the `testlens` binary somewhere on your `PATH`.
 
 ```sh
 unzip testlens-linux-<arch>-<version>.zip
 sudo mv testlens-*/testlens /usr/local/bin/
 ```
 
-On Windows (PowerShell), move the binary to a new directory and add it to your user `PATH`:
+</TabItem>
+<TabItem label="Windows">
+
+In PowerShell, move the binary to a new directory and add it to your user `PATH`:
 
 ```powershell
 Expand-Archive testlens-windows-<arch>-<version>.zip
@@ -38,6 +44,9 @@ Move-Item testlens-windows-<arch>-<version>\testlens-<version>\testlens.exe "$en
 ```
 
 Open a new terminal afterwards for the `PATH` change to take effect.
+
+</TabItem>
+</Tabs>
 
 Verify the installation:
 
