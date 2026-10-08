@@ -28,15 +28,16 @@ unzip testlens-linux-<arch>-<version>.zip
 sudo mv testlens-*/testlens /usr/local/bin/
 ```
 
-On Windows (PowerShell), create a directory on your `PATH` and move the binary there:
+On Windows (PowerShell), move the binary to a new directory and add it to your user `PATH`:
 
 ```powershell
 Expand-Archive testlens-windows-<arch>-<version>.zip
 New-Item -ItemType Directory -Force "$env:LOCALAPPDATA\Programs\testlens"
-Move-Item testlens-windows-<arch>-<version>\testlens.exe "$env:LOCALAPPDATA\Programs\testlens"
+Move-Item testlens-windows-<arch>-<version>\testlens-<version>\testlens.exe "$env:LOCALAPPDATA\Programs\testlens"
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$env:LOCALAPPDATA\Programs\testlens", "User")
 ```
 
-`$env:LOCALAPPDATA\Programs` is already on your `PATH` on recent Windows versions; if the last command's target isn't, add the directory via _Settings → System → About → Advanced system settings → Environment Variables_.
+Open a new terminal afterwards for the `PATH` change to take effect.
 
 Verify the installation:
 
