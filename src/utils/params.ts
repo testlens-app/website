@@ -2,7 +2,12 @@
 import type { CollectionEntry } from "astro:content";
 
 type ImageModule = { default: { src: string } };
-const images = import.meta.glob("../assets/**", { eager: true }) as ImageModule;
+const images = import.meta.glob(
+  "../assets/**/*.{png,jpg,jpeg,webp,avif,svg,gif}",
+  {
+    eager: true,
+  }
+) as ImageModule;
 
 export function getBlogParams(post: CollectionEntry<"blog">) {
   // Grab the `pubDate` from the blog post's frontmatter.
