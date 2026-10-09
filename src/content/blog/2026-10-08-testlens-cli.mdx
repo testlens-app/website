@@ -7,13 +7,14 @@ pubDate: "2026-10-08"
 image: "docs/tui.png"
 ---
 
-Today we're proud to announce the [TestLens CLI](https://github.com/testlens-app/cli):
-your test results, right on the command line.
+Today we're proud to announce the [TestLens
+CLI](https://github.com/testlens-app/cli): your test results from GitHub
+Actions, right on the command line.
 
-So far, TestLens has lived in your browser, with the [PR comment](/docs/features/pr-comment/)
-during review and the [Test Dashboard](/docs/features/dashboard/) over time.
-That covers review and history, but not the place where development actually
-happens: the terminal.
+So far, TestLens has lived in your browser, with the [PR
+comment](/docs/features/pr-comment/) during review and the [Test
+Dashboard](/docs/features/dashboard/) over time. That covers review and
+history, but not the place where development actually happens: the terminal.
 
 The PR comment summarizes your test results, and it does that job well. But a
 comment has limited space, and a failing build often has more failures than
@@ -59,7 +60,7 @@ the workflow runs for the head commit, discover the jobs, figure out which of
 them actually ran tests, download each job's log archive, and search it for
 failure output. Each of those steps is a separate API round trip, and the
 searches rarely hit on the first try, so a real fix turns into many rounds of
-scraping before a single line of code changes.[^1] TestLens instrumentation
+scraping before a single line of code changes. TestLens instrumentation
 captures the failures at the source, regardless of how the build is configured
 to log.
 
@@ -81,10 +82,3 @@ and add the [setup action](https://github.com/testlens-app/setup-testlens) to yo
 your pull requests is one command away.
 
 Happy testing!
-
-[^1]:
-    Even then the logs often don't contain what is needed. Gradle prints
-    failed test names with only a short exception summary at its default log level;
-    the full stack traces require configuring the `testLogging` block on the `Test`
-    task (for example, `exceptionFormat = "full"`), which most builds don't do. And
-    GitHub Actions truncates long log lines anyway.
