@@ -21,6 +21,8 @@ Download the archive for your operating system and architecture from the [latest
 | macOS   | `testlens-macos-<arch>-<version>.zip`   |
 | Windows | `testlens-windows-<arch>-<version>.zip` |
 
+For verifying the release archive, see [Verifying release integrity](#verifying-release-integrity).
+
 <Tabs>
 <TabItem label="Linux / macOS">
 
@@ -30,6 +32,18 @@ Unzip the archive and put the `testlens` binary somewhere on your `PATH`.
 unzip testlens-linux-<arch>-<version>.zip
 sudo mv testlens-*/testlens /usr/local/bin/
 ```
+
+<details>
+<summary>macOS: binary blocked by Gatekeeper</summary>
+
+Because the binary is not notarized, macOS may block it after downloading with a browser ("cannot be opened because the developer cannot be verified").
+Remove the quarantine flag to allow it:
+
+```sh
+xattr -d com.apple.quarantine testlens
+```
+
+</details>
 
 </TabItem>
 <TabItem label="Windows">
@@ -53,20 +67,6 @@ Verify the installation:
 ```sh
 testlens --version
 ```
-
-For verifying the release archive, see [Verifying release integrity](#verifying-release-integrity).
-
-<details>
-<summary>macOS: binary blocked by Gatekeeper</summary>
-
-Because the binary is not notarized, macOS may block it after downloading with a browser ("cannot be opened because the developer cannot be verified").
-Remove the quarantine flag to allow it:
-
-```sh
-xattr -d com.apple.quarantine testlens
-```
-
-</details>
 
 ## Usage
 
