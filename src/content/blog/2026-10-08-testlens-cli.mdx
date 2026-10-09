@@ -59,13 +59,9 @@ the workflow runs for the head commit, discover the jobs, figure out which of
 them actually ran tests, download each job's log archive, and search it for
 failure output. Each of those steps is a separate API round trip, and the
 searches rarely hit on the first try, so a real fix turns into many rounds of
-scraping before a single line of code changes. Even then the logs often don't
-contain what is needed. Gradle prints failed test names with only a short
-exception summary at its default log level; the full stack traces require
-configuring the `testLogging` block on the `Test` task (for example,
-`exceptionFormat = "full"`), which most builds don't do. And GitHub Actions
-truncates long log lines anyway. TestLens instrumentation captures the failures
-at the source, regardless of how the build is configured to log.
+scraping before a single line of code changes.[^1] TestLens instrumentation
+captures the failures at the source, regardless of how the build is configured
+to log.
 
 For your agent, a prompt as short as this is enough:
 
@@ -85,3 +81,10 @@ and add the [setup action](https://github.com/testlens-app/setup-testlens) to yo
 your pull requests is one command away.
 
 Happy testing!
+
+[^1]:
+    Even then the logs often don't contain what is needed. Gradle prints
+    failed test names with only a short exception summary at its default log level;
+    the full stack traces require configuring the `testLogging` block on the `Test`
+    task (for example, `exceptionFormat = "full"`), which most builds don't do. And
+    GitHub Actions truncates long log lines anyway.
