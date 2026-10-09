@@ -17,7 +17,7 @@ happens: the terminal.
 
 The PR comment summarizes your test results, and it does that job well. But a
 comment has limited space, and a failing build often has more failures than
-fit in it. Full stack traces and long expected-versus-actual diffs don't
+it can fit. Full stack traces and long expected-versus-actual diffs don't
 survive being squeezed into a comment. So we truncate, link out to the job
 log, and send you back into GitHub Actions to scroll through thousands of
 lines to find the one stack trace you needed. (This [comment on a Grails pull
@@ -32,18 +32,18 @@ line.
 
 That's where the CLI comes in: `testlens`, a native binary you can download
 from the [CLI releases](https://github.com/testlens-app/cli/releases/latest).
-No Java installation needed. Today it has a single command,
+Today it has a single command,
 `testlens pr <number>`, which fetches the test results for a pull request
-from the same data that powers the PR comment.
+showing the same data that is used to create the PR comment.
 
 import AsciinemaPlayer from "../../components/AsciinemaPlayer.astro";
 
 <AsciinemaPlayer src="/blog/testlens-cli.cast" autoplay loop />
 
-The command looks at where it runs. In an interactive terminal it opens a
+When executed in an interactive terminal, the command opens a
 terminal UI: a table of failing tests, aggregated across all runs on that
 commit, so a test that failed once and then passed shows up as flaky. Pick a
-row and you get the full picture for that test execution: which job and which
+row and you get the full picture for that test: which job and which
 Gradle task or Maven goal ran it, when it ran, the expected-versus-actual diff,
 and the complete stack trace. No log spelunking, no clicking through to
 GitHub Actions.
@@ -53,11 +53,10 @@ summary, then every failing test with its attempts, diffs, and stack traces,
 grouped by job. Nothing is truncated, so an agent can read the entire failure
 and act on it.
 
-Without the plain text output, an agent that is asked to fix a failing PR has
-to reconstruct
-the same information by hand. It lists the workflow runs for the head commit,
-discovers the jobs, figures out which of them actually ran tests, downloads
-each job's log archive, and searches it for failure output. Each of those
+Without the plain text output, an agent that is asked to fix a failing PR would
+have to piece together the same information from multiple source. It would list
+the workflow runs for the head commit, discover the jobs, figure out which of them actually ran tests, download each job's log archive, and search it for
+failure output. Each of those
 steps is a separate API round trip, and the searches rarely hit on the first
 try, so a real fix turns into many rounds of scraping before a single line of
 code changes. Even then the logs often don't contain what is needed. Gradle
@@ -82,7 +81,7 @@ It picks up the repository from your `origin` remote and your token from
 usually all it takes.
 
 If you don't use TestLens yet, install the [TestLens App](https://github.com/marketplace/testlens-app)
-and add the setup action to your workflows. Then the next red build on one of
+and add the [setup action](https://github.com/testlens-app/setup-testlens) to your workflows. Then the next red build on one of
 your pull requests is one command away.
 
 Happy testing!
