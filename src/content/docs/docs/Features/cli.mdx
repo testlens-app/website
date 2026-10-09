@@ -21,6 +21,8 @@ Download the archive for your operating system and architecture from the [latest
 | macOS   | `testlens-macos-<arch>-<version>.zip`   |
 | Windows | `testlens-windows-<arch>-<version>.zip` |
 
+For verifying the release archive, see [Verifying release integrity](#verifying-release-integrity).
+
 <Tabs>
 <TabItem label="Linux / macOS">
 
@@ -30,6 +32,18 @@ Unzip the archive and put the `testlens` binary somewhere on your `PATH`.
 unzip testlens-linux-<arch>-<version>.zip
 sudo mv testlens-*/testlens /usr/local/bin/
 ```
+
+<details>
+<summary>macOS: binary blocked by Gatekeeper</summary>
+
+Because the binary is not notarized, macOS may block it after downloading with a browser ("cannot be opened because the developer cannot be verified").
+Remove the quarantine flag to allow it:
+
+```sh
+xattr -d com.apple.quarantine testlens
+```
+
+</details>
 
 </TabItem>
 <TabItem label="Windows">
@@ -53,20 +67,6 @@ Verify the installation:
 ```sh
 testlens --version
 ```
-
-For verifying the release archive, see [Verifying release integrity](#verifying-release-integrity).
-
-<details>
-<summary>macOS: binary blocked by Gatekeeper</summary>
-
-Because the binary is not notarized, macOS may block it after downloading with a browser ("cannot be opened because the developer cannot be verified").
-Remove the quarantine flag to allow it:
-
-```sh
-xattr -d com.apple.quarantine testlens
-```
-
-</details>
 
 ## Usage
 
@@ -221,7 +221,7 @@ Import it, then verify the signature of the archive you downloaded:
 
 ```sh
 curl -fsSL https://testlens.app/KEYS.txt | gpg --import
-gpg --verify testlens-linux-amd64-1.0.0-rc-1.zip.asc testlens-linux-amd64-1.0.0-rc-1.zip
+gpg --verify testlens-linux-amd64-1.0.0.zip.asc testlens-linux-amd64-1.0.0.zip
 ```
 
 A successful verification looks like this:
@@ -245,13 +245,13 @@ The release workflow publishes an attestation for each archive.
 Verify it with the [GitHub CLI](https://cli.github.com/):
 
 ```sh
-gh attestation verify testlens-linux-amd64-1.0.0-rc-1.zip --repo testlens-app/cli
+gh attestation verify testlens-linux-amd64-1.0.0.zip --repo testlens-app/cli
 ```
 
 This loads the attestation from the GitHub API and checks that the archive's digest matches the recorded subject:
 
 ```
-Loaded digest sha256:de1d2c1b6862672cbbee164187839465b6d407366a11efbba217ad6bfa379370 for file://testlens-linux-amd64-1.0.0-rc-1.zip
+Loaded digest sha256:9818be39937c95af200ca486c9cff3e376324d50898ccd140eb43d5a4f5ce21d for file://testlens-linux-amd64-1.0.0.zip
 Loaded 1 attestation from GitHub API
 
 The following policy criteria will be enforced:
@@ -267,9 +267,9 @@ The following 1 attestation matched the policy criteria
 
 - Attestation #1
   - Build repo:..... testlens-app/cli
-  - Build workflow:. .github/workflows/release.yml@refs/tags/v1.0.0-rc-1
+  - Build workflow:. .github/workflows/release.yml@refs/tags/v1.0.0
   - Signer repo:.... testlens-app/cli
-  - Signer workflow: .github/workflows/release.yml@refs/tags/v1.0.0-rc-1
+  - Signer workflow: .github/workflows/release.yml@refs/tags/v1.0.0
 ```
 
 The result confirms the archive was built by the `testlens-app/cli` release workflow from the tagged commit. See the [GitHub documentation on artifact attestations](https://docs.github.com/actions/security-for-github-actions/security-hardening-for-github-actions/using-artifact-attestations-to-establish-provenance-for-builds) for details on how attestation verification works.
