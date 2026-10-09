@@ -55,17 +55,17 @@ and act on it.
 
 Without the plain text output, an agent that is asked to fix a failing PR would
 have to piece together the same information from multiple source. It would list
-the workflow runs for the head commit, discover the jobs, figure out which of them actually ran tests, download each job's log archive, and search it for
-failure output. Each of those
-steps is a separate API round trip, and the searches rarely hit on the first
-try, so a real fix turns into many rounds of scraping before a single line of
-code changes. Even then the logs often don't contain what is needed. Gradle
-prints failed test names with only a short exception summary at its default
-log level; the full stack traces require configuring the `testLogging` block
-on the `Test` task (for example, `exceptionFormat = "full"`), which most
-builds don't do. And GitHub Actions truncates long log lines anyway.
-TestLens instrumentation captures the failures at the source, regardless of
-how the build is configured to log.
+the workflow runs for the head commit, discover the jobs, figure out which of
+them actually ran tests, download each job's log archive, and search it for
+failure output. Each of those steps is a separate API round trip, and the
+searches rarely hit on the first try, so a real fix turns into many rounds of
+scraping before a single line of code changes. Even then the logs often don't
+contain what is needed. Gradle prints failed test names with only a short
+exception summary at its default log level; the full stack traces require
+configuring the `testLogging` block on the `Test` task (for example,
+`exceptionFormat = "full"`), which most builds don't do. And GitHub Actions
+truncates long log lines anyway. TestLens instrumentation captures the failures
+at the source, regardless of how the build is configured to log.
 
 For your agent, a prompt as short as this is enough:
 
