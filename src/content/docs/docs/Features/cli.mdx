@@ -147,6 +147,19 @@ import screenshot from "../../../../assets/docs/tui.png";
 
 <Image src={screenshot} alt="TestLens CLI in TUI mode" />
 
+#### Navigation
+
+The arrow keys move the selection in the test table down and up, and scroll the details view once it is focused.
+The `Tab` key switches focus between the test table and the details view.
+The `hjkl` keys work the same way as the arrow keys: `j` and `k` move the selection and scroll the view, and `h` and `l` switch between test executions.
+
+#### Search
+
+Pressing `/` opens a search bar in the footer of the TUI.
+Typing filters the test table using fuzzy search: all rows that match the query stay visible, ranked so the most relevant match is on top, and the matched characters are shown in bold.
+Pressing `Enter` commits the search and returns to navigation mode.
+Pressing `Escape` closes the search bar and restores the unfiltered table.
+
 ### CLI Mode
 
 CLI mode prints the same information as plain text.
