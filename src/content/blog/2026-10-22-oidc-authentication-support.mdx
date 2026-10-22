@@ -6,20 +6,21 @@ pubDate: "2026-10-22"
 image: "blog/oidc-authentication-support.png"
 ---
 
-When we introduced the [`setup-testlens`](https://github.com/testlens-app/setup-testlens) GitHub Action, our goal was to make adding it to your GitHub Actions workflows as simple as possible.
-The action instruments Gradle and Maven builds which then report test events to the TestLens server.
-First, however, it needs to prove that test results come from a GitHub Actions job of your repository.
-Every GitHub Actions job has access to a temporary `GITHUB_TOKEN` issued for the `github-actions[bot]` user.
-The TestLens server uses that token to verify that the job belongs to a repository the TestLens GitHub app is installed for.
-All other GitHub API calls use the TestLens GitHub app's own credentials.
-No additional configuration is required.
+Starting with v1.10.0, the [`setup-testlens`](https://github.com/testlens-app/setup-testlens) GitHub Action can authenticate with TestLens via [OpenID Connect](https://docs.github.com/actions/concepts/security/openid-connect) (OIDC) instead of the job's `GITHUB_TOKEN`.
+This lets teams whose security policy doesn't allow sending secrets outside their build environment use TestLens.
 
-Recently, we have received feedback from teams that have a security policy in place that doesn't allow sending secrets outside their build environment.
-Well, we have good news!
-TestLens now supports such setups via [OpenID Connect](https://docs.github.com/actions/concepts/security/openid-connect) (OIDC).
-OIDC tokens are signed by GitHub and grant no access to your repository or the GitHub API.
-Starting with v1.10.0 of `setup-testlens`, you can opt in to this feature.
-When configured as follows, the action exchanges the OIDC token for a TestLens token instead of using the `GITHUB_TOKEN`.
+The action instruments Gradle and Maven builds, which then report test events to TestLens.
+First, however, it needs to prove that test results come from a GitHub Actions job of your repository.
+By default, it uses the job's `GITHUB_TOKEN` for that.
+TestLens only uses it to verify that the job belongs to a repository the TestLens GitHub app is installed for and makes all other GitHub API calls with the app's own credentials.
+Nevertheless, the `GITHUB_TOKEN` is a short-lived secret that grants access to your repository, if only for the duration of the job.
+
+With OIDC, no such secret leaves your build environment.
+The OIDC token is signed by GitHub but grants no access to your repository.
+The action exchanges it for a TestLens token in its open-source code, so you can review exactly what is sent.
+The TestLens token is only issued to running jobs, can only be used to report results for your repository, and expires when the job would time out at the latest.
+
+To opt in, grant the job the `id-token: write` permission and set the `use-oidc` input to `true`:
 
 ```yml
 jobs:
