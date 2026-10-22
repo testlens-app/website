@@ -1,0 +1,53 @@
+---
+title: "OpenID Connect Support for Authenticating Workflows"
+description: |
+  The setup-testlens action can now authenticate with GitHub's OIDC tokens instead of the GITHUB_TOKEN.
+pubDate: "2026-10-22"
+image: "blog/oidc-authentication-support.png"
+---
+
+When we introduced the [`setup-testlens`](https://github.com/testlens-app/setup-testlens) GitHub Action, our goal was to make adding it to your GitHub Actions workflows as simple as possible.
+The action instruments Gradle and Maven builds which then report test events to the TestLens server.
+First, however, it needs to prove that test results come from a GitHub Actions job of your repository.
+Every GitHub Actions job has access to a temporary `GITHUB_TOKEN` issued for the `github-actions[bot]` user.
+The TestLens server uses that token to verify that the job belongs to a repository the TestLens GitHub app is installed for.
+All other GitHub API calls use the TestLens GitHub app's own credentials.
+No additional configuration is required.
+
+Recently, we have received feedback from teams that have a security policy in place that doesn't allow sending secrets outside their build environment.
+Well, we have good news!
+TestLens now supports such setups via [OpenID Connect](https://docs.github.com/actions/concepts/security/openid-connect) (OIDC).
+OIDC tokens are signed by GitHub and grant no access to your repository or the GitHub API.
+Starting with v1.10.0 of `setup-testlens`, you can opt in to this feature.
+When configured as follows, the action exchanges the OIDC token for a TestLens token instead of using the `GITHUB_TOKEN`.
+
+```yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+      # ...
+      - uses: testlens-app/setup-testlens@v1
+        with:
+          use-oidc: true
+```
+
+When running a GitHub Actions job with this configuration, you can observe the token exchange in the action's logs:
+
+import { Image } from "astro:assets";
+import screenshot from "../../assets/blog/oidc-authentication-support.png";
+
+<Image
+  src={screenshot}
+  alt="GitHub Actions job log showing OIDC-specific message"
+/>
+
+GitHub doesn't issue OIDC tokens to workflows triggered by pull requests from forks.
+For those, the action falls back to the `GITHUB_TOKEN`, so their results are still reported.
+Please refer to the [documentation](/docs/setup/authentication/) for more usage scenarios, including how to disable the fallback.
+
+Happy testing!
