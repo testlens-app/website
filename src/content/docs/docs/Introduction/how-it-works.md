@@ -14,7 +14,7 @@ If you're interested in TestLens' features, go to the [Features section](/docs/f
 TestLens consists of three parts:
 
 - A [GitHub App](https://github.com/marketplace/testlens-app) that you need to install into your GitHub account.
-- A [GitHub Action](https://github.com/marketplace/actions/set-up-testlens) that you need to add to your GitHub Actions Workflows.
+- A [GitHub Action](https://github.com/marketplace/actions/setup-testlens) that you need to add to your GitHub Actions Workflows.
 - An instrumentation client that is injected into each JVM that is executing tests by the setup-testlens action.
 
 Here's an overview of how the system works:
