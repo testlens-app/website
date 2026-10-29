@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": "24.x"
+    "node": "26.x"
   },
   "scripts": {
     "dev": "astro dev",
@@ -21,7 +21,7 @@
     "@fontsource-variable/google-sans-code": "^5.2.3",
     "@fontsource-variable/google-sans-flex": "^5.2.1",
     "@tailwindcss/vite": "^4.1.4",
-    "@types/node": "^25.5.0",
+    "@types/node": "^26.0.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "asciinema-player": "^3.17.0",
