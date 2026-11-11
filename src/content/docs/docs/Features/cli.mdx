@@ -68,6 +68,15 @@ Verify the installation:
 testlens --version
 ```
 
+## Shell completion
+
+The CLI can generate a completion script for bash and zsh (other shells are currently not supported).
+Add this line to your `~/.bashrc` or `~/.zshrc`:
+
+```sh
+source <(testlens completion)
+```
+
 ## Usage
 
 Running `testlens` without arguments prints the available commands:
@@ -77,10 +86,11 @@ Usage: testlens [-hV] [COMMAND]
   -h, --help      Show this help message and exit.
   -V, --version   Print version information and exit.
 Commands:
-  pr  Show the tests of a pull request
+  pr          Show the tests of a pull request
+  completion  Generate a completion script for bash and zsh
 ```
 
-Currently there is a single command, `pr`, which shows the test results of a pull request.
+The `pr` command shows the test results of a pull request.
 By default, TestLens detects the repository from the current working directory, so running `testlens pr <number>` inside a clone is usually all you need.
 
 ```
@@ -97,6 +107,7 @@ Show the tests of a pull request
                           of the pull request)
       --token=<token>   GitHub access token (defaults to $GITHUB_TOKEN or
                           $GH_TOKEN)
+  -V, --version         Print version information and exit.
 ```
 
 The `--repo`, `--sha`, and `--token` options all have sensible defaults: the repository is read from the `origin` remote, the commit is the head of the pull request, and the token is taken from `$GITHUB_TOKEN` or `$GH_TOKEN`.
