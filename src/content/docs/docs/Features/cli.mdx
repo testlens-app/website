@@ -70,12 +70,37 @@ testlens --version
 
 ## Shell completion
 
-The CLI can generate a completion script for bash and zsh (other shells are currently not supported).
-Add this line to your `~/.bashrc` or `~/.zshrc`:
+The CLI can generate a completion script for bash, zsh, and fish.
+
+<Tabs>
+<TabItem label="bash">
+
+Add this line to your `~/.bashrc`:
 
 ```sh
-source <(testlens completion)
+source <(testlens completion -s bash)
 ```
+
+</TabItem>
+<TabItem label="zsh">
+
+Add this line to your `~/.zshrc`:
+
+```sh
+source <(testlens completion -s zsh)
+```
+
+</TabItem>
+<TabItem label="fish">
+
+Generate the script once into fish's completions directory:
+
+```sh
+testlens completion -s fish > ~/.config/fish/completions/testlens.fish
+```
+
+</TabItem>
+</Tabs>
 
 ## Usage
 
@@ -87,7 +112,7 @@ Usage: testlens [-hV] [COMMAND]
   -V, --version   Print version information and exit.
 Commands:
   pr          Show the tests of a pull request
-  completion  Generate a completion script for bash and zsh
+  completion  Generate a completion script for bash, zsh, or fish
 ```
 
 The `pr` command shows the test results of a pull request.
